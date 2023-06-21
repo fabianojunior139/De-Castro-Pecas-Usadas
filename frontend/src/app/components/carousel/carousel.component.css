@@ -1,0 +1,14 @@
+.botao-novidades {
+  padding: 1rem 2rem;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(15px);
+  font-family: 'montserrat';
+  color: white;
+  transition: 0.25s;
+  font-weight: 700;
+}
+
+.botao-novidades:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
