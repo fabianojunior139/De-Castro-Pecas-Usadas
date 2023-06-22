@@ -19,12 +19,12 @@
 
         <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="E-mail" formControlName="email">
+            <input type="email" class="form-control" id="floatingInput" placeholder="E-mail" formControlName="email" required>
             <label for="floatingInput" class="mx-2">E-mail</label>
           </div>
           <div class="form-floating">
             <input type="password" class="form-control" id="floatingPassword" placeholder="Senha"
-              formControlName="password">
+              formControlName="password" required>
             <label for="floatingPassword" class="mx-2">Senha</label>
           </div>
 

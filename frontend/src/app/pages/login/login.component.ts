@@ -17,8 +17,7 @@ export class LoginComponent {
   constructor(public authService: AuthService) {}
 
   onSubmit(): void {
-    console.log(this.formGroup.value);
     const account: Account = this.formGroup.getRawValue();
-    this.authService.Login(account);
+    this.authService.login(account);
   }
 }
