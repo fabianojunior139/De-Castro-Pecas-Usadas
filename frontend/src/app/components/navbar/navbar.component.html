@@ -1,8 +1,5 @@
-<mat-toolbar>
+<mat-toolbar class="teste">
   <div class="container">
-    <!-- <a routerLink="/publicacoes">
-      <span class="material-icons">face</span>
-    </a> -->
 
     <ng-container *ngIf="
         authService.isUserLoggedIn();
@@ -11,34 +8,21 @@
       "></ng-container>
 
     <ng-template #authenticatedUser>
+      <div class="sera">
 
-      <button mat-button routerLink="/publicacoes">Publicações</button>
+        <div>
+          <a href="">Logo</a>
+        </div>
 
-      <button mat-button routerLink="/publicacoes/novo">Escrever publicação</button>
+        <div>
+          <button class="a" mat-button>Sobre</button>
+          <button class="a" mat-button>Dashboard</button>
+          <button class="a" mat-button>Anuncios</button>
+          <button class="a" mat-button (click)="authService.logout()">Sair</button>
+        </div>
 
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>more_vert</mat-icon>
-      </button>
+      </div>
 
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="/meu-perfil">Meu perfil</button>
-        <button mat-menu-item routerLink="/meu-perfil/configuracoes">Configurações da conta</button>
-        <button mat-menu-item (click)="authService.logout()">Sair</button>
-      </mat-menu>
-
-      <ng-template #mobileMenu>
-        <button mat-icon-button [matMenuTriggerFor]="menu">
-          <mat-icon>more_vert</mat-icon>
-        </button>
-
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item routerLink="/publicacoes">Publicações</button>
-          <button mat-menu-item routerLink="/publicacoes/novo">Escrever publicação</button>
-          <button mat-menu-item routerLink="/meu-perfil">Meu perfil</button>
-          <button mat-menu-item routerLink="/meu-perfil/configuracoes">Configurações da conta</button>
-          <button mat-menu-item (click)="authService.logout()">Sair</button>
-        </mat-menu>
-      </ng-template>
     </ng-template>
 
     <ng-template #anonymousUser>

@@ -38,6 +38,7 @@ export class AuthService {
 
   public logout(): void {
     window.localStorage.clear();
+    this.utilService.handleRequestError('usuário deslogado com sucesso!')
     this.router.navigate(['/login']);
   }
 

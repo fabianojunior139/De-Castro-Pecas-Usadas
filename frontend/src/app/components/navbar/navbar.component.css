@@ -1,0 +1,20 @@
+.teste {
+  background-color: black;
+  opacity: 0.8;
+  color: white;
+}
+
+.a:hover {
+  background-color: #ececec;
+  color: white;
+}
+
+.sera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.teste2:hover {
+  background-color: red;
+}
