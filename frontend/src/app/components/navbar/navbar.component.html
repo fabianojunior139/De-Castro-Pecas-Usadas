@@ -1,24 +1,66 @@
-<nav class="navbar navbar-expand-lg">
-  <div class="container" id="teste">
+<mat-toolbar>
+  <div class="container">
+    <!-- <a routerLink="/publicacoes">
+      <span class="material-icons">face</span>
+    </a> -->
 
-    <a class="navbar-brand" href="#">De Castro Peças Usadas</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <ng-container *ngIf="
+        authService.isUserLoggedIn();
+        then authenticatedUser;
+        else anonymousUser
+      "></ng-container>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-bold" routerLink="login">Login</a>
-        </li>
-      </ul>
-    </div>
+    <ng-template #authenticatedUser>
 
+      <button mat-button routerLink="/publicacoes">Publicações</button>
+
+      <button mat-button routerLink="/publicacoes/novo">Escrever publicação</button>
+
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/meu-perfil">Meu perfil</button>
+        <button mat-menu-item routerLink="/meu-perfil/configuracoes">Configurações da conta</button>
+        <button mat-menu-item (click)="authService.logout()">Sair</button>
+      </mat-menu>
+
+      <ng-template #mobileMenu>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/publicacoes">Publicações</button>
+          <button mat-menu-item routerLink="/publicacoes/novo">Escrever publicação</button>
+          <button mat-menu-item routerLink="/meu-perfil">Meu perfil</button>
+          <button mat-menu-item routerLink="/meu-perfil/configuracoes">Configurações da conta</button>
+          <button mat-menu-item (click)="authService.logout()">Sair</button>
+        </mat-menu>
+      </ng-template>
+    </ng-template>
+
+    <ng-template #anonymousUser>
+
+      <ng-template #mainMenu>
+        <button mat-button routerLink="/publicacoes">Publicações</button>
+        <button mat-button routerLink="/login">Entrar</button>
+        <button mat-stroked-button routerLink="/criar-conta" color="primary">Criar conta</button>
+      </ng-template>
+
+      <ng-template #mobileMenu>
+        <button mat-stroked-button routerLink="/criar-conta" color="primary">Criar conta</button>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="/login">Entrar</button>
+          <button mat-menu-item routerLink="/publicacoes">Publicações</button>
+        </mat-menu>
+      </ng-template>
+    </ng-template>
   </div>
-</nav>
+</mat-toolbar>

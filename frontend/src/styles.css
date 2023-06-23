@@ -11,3 +11,19 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.snackbar-success {
+  background: green;
+  color: white;
+}
+
+.snackbar-error {
+  background: red;
+  color: white;
+}
+
+.snackbar-success .mat-simple-snackbar-action,
+.snackbar-error .mat-simple-snackbar-action {
+  color: white;
+}

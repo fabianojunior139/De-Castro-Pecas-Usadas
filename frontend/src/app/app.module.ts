@@ -9,8 +9,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+
+// Material
+import { materialModules } from './material-modules';
 
 @NgModule({
   declarations: [
@@ -19,14 +22,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     NavbarComponent,
     CarouselComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatSnackBarModule,
     BrowserAnimationsModule,
+    ...materialModules,
   ],
   providers: [],
   bootstrap: [AppComponent],

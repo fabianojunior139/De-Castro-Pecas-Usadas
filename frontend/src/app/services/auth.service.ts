@@ -31,8 +31,6 @@ export class AuthService {
         this.router.navigate(['']);
       },
       error: () => {
-        console.log("A");
-        
         this.utilService.handleRequestError('Credenciais inválidas');
       },
     });

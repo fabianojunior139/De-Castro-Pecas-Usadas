@@ -23,7 +23,7 @@ export class UtilService {
     this.snackBar.open(message, 'x', {
       duration: 3000,
       horizontalPosition: 'center',
-      verticalPosition: 'bottom',
+      verticalPosition: 'top',
       panelClass: error ? 'snackbar-error' : 'snackbar-success',
     });
   }

@@ -10,12 +10,8 @@ export class AuthGuard {
 
   canActivate(): boolean {
     if (this.authService.isUserLoggedIn()) {
-      console.log("usuário logado com Token");
-
       return true;
     } else {
-      console.log("Usuário não possui token");
-
       this.router.navigate(['login']);
       return false;
     }
