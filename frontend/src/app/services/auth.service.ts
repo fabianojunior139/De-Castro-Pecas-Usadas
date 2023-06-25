@@ -28,7 +28,7 @@ export class AuthService {
       next: (token) => {
         this.setAccessToken(token);
         this.updateLoggedIn();
-        this.router.navigate(['']);
+        this.router.navigate(['/dashboard']);
       },
       error: () => {
         this.utilService.handleRequestError('Credenciais inválidas');

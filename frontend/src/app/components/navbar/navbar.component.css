@@ -1,20 +1,29 @@
-.teste {
-  background-color: black;
+@import "../../../styles.css";
+
+mat-toolbar {
+  background-color: var(--cor-preta);
   opacity: 0.8;
-  color: white;
+  color: var(--cor-branca);
+  position: fixed;
+  z-index: 1000;
 }
 
-.a:hover {
-  background-color: #ececec;
-  color: white;
+mat-toolbar button:hover {
+  background-color: var(--cor-cinza-escuro);
 }
 
-.sera {
+.logo {
+  text-decoration: none;
+  color: var(--cor-branca);
+}
+
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.teste2:hover {
-  background-color: red;
+.nav-item {
+  margin-right: 0.5rem;
+  border-radius: 0.25rem;
 }

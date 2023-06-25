@@ -1,29 +1,16 @@
 @import "~bootstrap/dist/css/bootstrap.css";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
+
+:root {
+  --cor-branca: #fff;
+  --cor-preta: #000;
+  --cor-cinza-escuro: #263238;
+  --cor-cinza-clara: #8690a3;
+}
 
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
-}
-
-
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
-.snackbar-success {
-  background: green;
-  color: white;
-}
-
-.snackbar-error {
-  background: red;
-  color: white;
-}
-
-.snackbar-success .mat-simple-snackbar-action,
-.snackbar-error .mat-simple-snackbar-action {
-  color: white;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
 }

@@ -1,10 +1,12 @@
+@import "../../../styles.css";
+
 .container-sm {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: calc(100vh - 56px);
-  color: grey;
+  color: var(--cor-cinza-escuro);
 }
 
 h1 {

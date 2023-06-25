@@ -1,4 +1,4 @@
-<mat-toolbar class="teste">
+<mat-toolbar>
   <div class="container">
 
     <ng-container *ngIf="
@@ -8,43 +8,34 @@
       "></ng-container>
 
     <ng-template #authenticatedUser>
-      <div class="sera">
-
+      <div class="navbar">
         <div>
-          <a href="">Logo</a>
+          <a class="logo" href="#">De Castro Peças Usadas</a>
         </div>
 
         <div>
-          <button class="a" mat-button>Sobre</button>
-          <button class="a" mat-button>Dashboard</button>
-          <button class="a" mat-button>Anuncios</button>
-          <button class="a" mat-button (click)="authService.logout()">Sair</button>
+          <button mat-button>Anúncios</button>
+          <button mat-button>Dashboard</button>
+          <button mat-button (click)="authService.logout()">Sair</button>
         </div>
-
       </div>
-
     </ng-template>
 
     <ng-template #anonymousUser>
+      <div class="navbar">
 
-      <ng-template #mainMenu>
-        <button mat-button routerLink="/publicacoes">Publicações</button>
-        <button mat-button routerLink="/login">Entrar</button>
-        <button mat-stroked-button routerLink="/criar-conta" color="primary">Criar conta</button>
-      </ng-template>
+        <div>
+          <a class="logo" href="#">De Castro Peças Usadas</a>
+        </div>
 
-      <ng-template #mobileMenu>
-        <button mat-stroked-button routerLink="/criar-conta" color="primary">Criar conta</button>
+        <div>
+          <button mat-button>Anúncios</button>
+          <button mat-button>Dúvidas</button>
+          <button mat-button>Localização</button>
+          <button mat-button routerLink="login">Entrar</button>
+        </div>
+      </div>
 
-        <button mat-icon-button [matMenuTriggerFor]="menu">
-          <mat-icon>more_vert</mat-icon>
-        </button>
-
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item routerLink="/login">Entrar</button>
-          <button mat-menu-item routerLink="/publicacoes">Publicações</button>
-        </mat-menu>
-      </ng-template>
     </ng-template>
   </div>
 </mat-toolbar>

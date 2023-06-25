@@ -1,0 +1,16 @@
+body {
+  overflow-x: hidden;
+}
+
+.image {
+  background-image: url("../../../assets/images/DeCastro.jpeg");
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.img-brightness {
+  filter: brightness(0.2);
+}
