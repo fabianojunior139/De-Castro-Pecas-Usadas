@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SideNavToggle } from 'src/app/models/auth';
+import { SideNavToggle } from 'src/app/models/sidenav';
 
 @Component({
   selector: 'app-adm-dashboard',
@@ -7,7 +7,7 @@ import { SideNavToggle } from 'src/app/models/auth';
   styleUrls: ['./adm-dashboard.component.css']
 })
 export class AdmDashboardComponent {
-  
+
   isSideNavCollapsed = false;
   screenWidth = 0;
 

@@ -1,3 +1,5 @@
+import { UtilService } from './../../services/util.service';
+import { AuthService } from 'src/app/services/auth.service';
 import {
   Component,
   EventEmitter,
@@ -7,7 +9,6 @@ import {
 } from '@angular/core';
 import { navbarData } from './nav-data';
 import { faX } from '@fortawesome/free-solid-svg-icons';
-import { SideNavToggle } from 'src/app/models/auth';
 import {
   animate,
   keyframes,
@@ -15,6 +16,9 @@ import {
   transition,
   trigger,
 } from '@angular/animations';
+import { INavbarData, SideNavToggle } from 'src/app/models/sidenav';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidenav',
@@ -50,7 +54,16 @@ export class SidenavComponent implements OnInit {
   collapsed = true;
   screenWidth = 0;
   navData = navbarData;
+  multiple: boolean = false;
+
+  //icons
   faX = faX;
+  faChevronRight = faChevronRight;
+  faChevronDown = faChevronDown;
+
+  constructor(public authService: AuthService){}
+
+  logout = this.authService.logout;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -82,5 +95,20 @@ export class SidenavComponent implements OnInit {
       collapsed: this.collapsed,
       screenWidth: this.screenWidth,
     });
+  }
+
+  handleClick(item: INavbarData): void {
+    this.shrinkItems(item);
+    item.expanded = !item.expanded;
+  }
+
+  shrinkItems(item: INavbarData) {
+    if (!this.multiple) {
+      for (let modelItem of this.navData) {
+        if (item !== modelItem && modelItem.expanded) {
+          modelItem.expanded = false;
+        }
+      }
+    }
   }
 }

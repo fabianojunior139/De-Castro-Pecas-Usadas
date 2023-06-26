@@ -85,8 +85,16 @@
 }
 
 .sidenav-nav-link:hover {
-  background-color: white;
-  color: black;
+  background-color: var(--cor-branca);
+  color: var(--cor-preta);
+}
+
+.sidenav-nav-link:hover .menu-collapse-icon {
+  color: var(--cor-preta);
+}
+
+.menu-collapse-icon {
+  color: var(--cor-preta);
 }
 
 .sidenav-link-icon {
@@ -105,7 +113,49 @@
   background-color: var(--cor-branca);
 }
 
+.active-sublevel {
+  color: #f3f3f3 !important;
+}
+
 .active .sidenav-link-icon,
-.active .sidenav-link-text {
+.active .sidenav-link-text,
+.active .menu-collapse-icon {
   color: var(--cor-preta);
+}
+
+.menu-collapse-icon {
+  font-size: 25px;
+  width: 2rem;
+  min-width: 2rem;
+  margin: auto 0.5rem auto auto;
+  text-align: center;
+  color: #f3f3f3;
+}
+
+.sublevel-nav {
+  list-style: none;
+  margin-bottom: 0 !important;
+}
+
+.sublevel-nav-link {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  color: #898989;
+  text-decoration: none;
+  border-radius: 0.625rem;
+  transition: all 0.3s ease;
+  list-style: none;
+}
+
+.sublevel-link-icon {
+  font-size: 4px;
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 0.5rem;
+  text-align: center;
+}
+
+.sublevel-nav-link:hover {
+  color: #f3f3f3;
 }

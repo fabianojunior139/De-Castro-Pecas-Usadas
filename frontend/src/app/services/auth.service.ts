@@ -28,17 +28,17 @@ export class AuthService {
       next: (token) => {
         this.setAccessToken(token);
         this.updateLoggedIn();
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard/stock/list']);
       },
       error: () => {
-        this.utilService.handleRequestError('Credenciais inválidas');
+        this.utilService.handleToast('Credenciais inválidas');
       },
     });
   }
 
   public logout(): void {
     window.localStorage.clear();
-    this.utilService.handleRequestError('usuário deslogado com sucesso!')
+    this.utilService.handleToast('Usuário deslogado com sucesso!');
     this.router.navigate(['/login']);
   }
 

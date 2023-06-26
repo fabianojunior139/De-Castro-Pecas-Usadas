@@ -3,7 +3,7 @@
   <div class="logo-container">
     <button class="logo" (click)="toggleCollapse()">DC</button>
 
-    <div class="logo-text" @fadeInOut *ngIf="collapsed">De Castro</div>
+    <div class="logo-text" @fadeInOut *ngIf="collapsed">DeCastro</div>
 
     <button class="button-close" @rotate *ngIf="collapsed" (click)="closeNavbar()">
       <fa-icon class="close-icon" [icon]="faX"></fa-icon>
@@ -12,12 +12,28 @@
 
   <ul class="sidenav-nav">
     <li class="sidenav-nav-item" *ngFor="let data of navData">
-      <a class="sidenav-nav-link" [routerLink]="[data.routerLink]" routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact: true}">
+
+      <a class="sidenav-nav-link" *ngIf="data.items && data.items.length > 0" (click)="handleClick(data)">
+        <fa-icon class="sidenav-link-icon" [icon]="data.icon"></fa-icon>
+        <span class="sidenav-link-text" *ngIf="collapsed">{{data.label}}</span>
+        <i *ngIf="data.items && collapsed" class="menu-collapse-icon">
+          <fa-icon *ngIf="data.items && collapsed" class="menu-collapse-icon"
+            [icon]="!data.expanded ? faChevronRight : faChevronDown"></fa-icon>
+        </i>
+      </a>
+
+      <a class="sidenav-nav-link" *ngIf="!data.items || (data.items && data.items.length === 0)"
+        (click)="data.label == 'Logout' ? authService.logout(): ''" [routerLink]="[data.routerLink]"
+        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <fa-icon class="sidenav-link-icon" [icon]="data.icon"></fa-icon>
         <span class="sidenav-link-text" *ngIf="collapsed">{{data.label}}</span>
       </a>
+
+      <div *ngIf="collapsed && data.items && data.items.length > 0">
+        <app-sublevel-menu [data]="data" [collapsed]="collapsed" [multiple]="multiple" [expanded]="data.expanded">
+        </app-sublevel-menu>
+      </div>
+
     </li>
   </ul>
-
 </div>

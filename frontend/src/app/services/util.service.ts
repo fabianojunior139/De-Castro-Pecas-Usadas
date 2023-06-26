@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class UtilService {
   constructor(private snackBar: MatSnackBar, private router: Router) {}
 
-  handleRequestError(message: string, urlRedirect?: string): Observable<any> {
+  handleToast(message: string, urlRedirect?: string): Observable<any> {
     this.showMessage(message, true);
 
     if (urlRedirect) {

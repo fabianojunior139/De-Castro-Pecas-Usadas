@@ -7,7 +7,3 @@ export interface Account {
   password: string,
 }
 
-export interface SideNavToggle { 
-  screenWidth: number;
-  collapsed: boolean
-}

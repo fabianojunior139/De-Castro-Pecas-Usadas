@@ -11,14 +11,14 @@ export class BodyComponent {
 
   getBodyClass(): string {
     let styleClass = '';
-    if (this.collapsed && this.screenWidth > 768) {
-      styleClass = 'body-trimmed';
+    if (!this.collapsed && this.screenWidth > 768) {
+      styleClass = 'body-md-screen';
     } else if (
       this.collapsed &&
       this.screenWidth <= 768 &&
       this.screenWidth > 0
     ) {
-      styleClass = 'body-md-screen';
+      styleClass = 'body-trimmed';
     }
     return styleClass;
   }
