@@ -1,4 +1,8 @@
 <app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+<app-navbar-adm
+    [collapsed]="isSideNavCollapsed"
+    [screenWidth]="screenWidth"
+></app-navbar-adm>
 <app-body
     [collapsed]="isSideNavCollapsed"
     [screenWidth]="screenWidth"

@@ -1,0 +1,22 @@
+<div class="head" [ngClass]="getHeadClass()">
+  <div class="head-content">
+    <div class="head-content-left">
+      <div class="search-container">
+        <div class="normal-search">
+          <input type="search" class="search" placeholder="Pesquisar...">
+          <fa-icon class="search-icon" [icon]="faSearch"></fa-icon>
+        </div>
+      </div>
+    </div>
+    <div class="head-content-right">
+      <div class="head-user-avatar-container">
+        <div class="head-user-avatar">
+          <button class="head-menu-item-btn">
+            <fa-icon class="user-avatar" [icon]="faUser"></fa-icon>
+            <div class="circle-indicator pulse"></div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

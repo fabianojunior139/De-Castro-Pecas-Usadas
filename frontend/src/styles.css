@@ -1,11 +1,21 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
+@import '~@angular/cdk/overlay-prebuilt.css';
 
 :root {
   --cor-branca: #fff;
   --cor-preta: #000;
   --cor-cinza-escuro: #263238;
   --cor-cinza-clara: #8690a3;
+  --cor-cinza-clara2: #c5c5c5;
+  --cor-cinza-clara3: #e5e5e5;
+  --cor-cinza-clara4: #f3f3f3;
+
+  --cor-primary: #3f51b5;
+  --cor-primary-variance: #5e6fce;
+
+  --color-warn: #f44336;
+
 }
 
 * {

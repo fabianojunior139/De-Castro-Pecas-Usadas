@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -41,9 +42,15 @@ import { ListUsersComponent } from './pages/adm-dashboard/users/list-users/list-
 import { UpdateUsersComponent } from './pages/adm-dashboard/users/update-users/update-users.component';
 import { CreateUsersComponent } from './pages/adm-dashboard/users/create-users/create-users.component';
 import { DeleteUsersComponent } from './pages/adm-dashboard/users/delete-users/delete-users.component';
+import { NavbarAdmComponent } from './components/navbar-adm/navbar-adm.component';
 
 // Material
 import { materialModules } from './material-modules';
+
+//Interceptor
+import { httpInterceptorProviders } from './components/http-interceptors';
+import { PartsCardComponent } from './components/parts-card/parts-card.component';
+import { FiltersPipe } from './pipes/filters.pipe';
 
 @NgModule({
   declarations: [
@@ -82,6 +89,9 @@ import { materialModules } from './material-modules';
     UpdateUsersComponent,
     CreateUsersComponent,
     DeleteUsersComponent,
+    NavbarAdmComponent,
+    PartsCardComponent,
+    FiltersPipe,
   ],
   imports: [
     BrowserModule,
@@ -90,9 +100,10 @@ import { materialModules } from './material-modules';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
+    FormsModule,
     ...materialModules,
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

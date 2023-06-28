@@ -17,7 +17,7 @@ export const navbarData: INavbarData[] = [
     items: [
       {
         routerLink: 'stock/list',
-        label: 'Estoque',
+        label: 'Lista de peças',
       },
       {
         routerLink: 'stock/create',
@@ -131,7 +131,7 @@ export const navbarData: INavbarData[] = [
     items: [
       {
         routerLink: 'users/list',
-        label: 'Lsta de Usuários',
+        label: 'Lista de Usuários',
       },
       {
         routerLink: 'users/create',

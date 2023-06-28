@@ -1,0 +1,66 @@
+@import "../../../../../styles.css";
+
+.title {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.list-parts {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+}
+
+.left-container {
+  width: 20rem;
+  height: calc(100vh - 12rem);
+  border: 1px solid var(--cor-cinza-clara3);
+  padding: 1rem;
+}
+
+.left-container-content {
+  width: 100%;
+}
+
+
+.filter-title {
+  text-align: center;
+  font-size: 1.125rem;
+  margin: 0.5rem 0;
+}
+
+.fixed {
+  width: 20rem;
+  position: fixed;
+  top: 6rem;
+  height: calc(100vh - 7rem);
+}
+
+.button-clear {
+  display: flex;
+  width: 80%;
+  margin: 0.5rem auto;
+}
+
+.right-container {
+  width: calc(100% - 21rem);
+}
+
+.no-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.no-content-text {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+.no-content-image {
+  width: 50%;
+}

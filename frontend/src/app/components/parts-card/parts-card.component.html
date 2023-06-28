@@ -1,0 +1,22 @@
+<div class="part-card">
+  <div class="content">
+    <div class="card-icon">
+      <fa-icon class="icon"
+        [icon]="automotivePartList.category == 'MECANICA' ? faGear : (automotivePartList.category == 'LATARIA' ? faCarOn : faCaravan)"></fa-icon>
+    </div>
+    <div class="card-info">
+      <div class="card-division">
+        <div class="part-name">{{automotivePartList.name}}</div>
+        <div class="part-price">R$ {{automotivePartList.average_price}}</div>
+      </div>
+      <div class="card-division">
+        <div class="part-cars-info">{{automotivePartList.car_brand}} <span
+            class="part-car-name">{{automotivePartList.car}}</span> {{automotivePartList.car_model}}
+          {{automotivePartList.year}}
+        </div>
+        <div class="part-quantity">Quantidade em estoque: <span
+            class="part-stock-value">{{automotivePartList.stock_quantity}}</span></div>
+      </div>
+    </div>
+  </div>
+</div>

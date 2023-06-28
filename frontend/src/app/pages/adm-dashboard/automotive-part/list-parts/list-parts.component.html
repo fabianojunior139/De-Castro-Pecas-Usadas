@@ -1,1 +1,56 @@
-<p>list-parts works!</p>
+<h1 class="title">Lista de Peças Cadastradas</h1>
+<div class="list-parts">
+  <div class="left-container" [ngClass]="{'fixed': isFixed}">
+    <h3 class="filter-title">Aplique os filtros</h3>
+    <form [formGroup]="formFilter" (ngSubmit)="formReset()">
+      <mat-form-field class="left-container-content">
+        <mat-label>Nome da peça</mat-label>
+        <input matInput formControlName="filterName" [(ngModel)]="filter.name" (input)="updateFilter()">
+      </mat-form-field>
+      <mat-form-field class="left-container-content">
+        <mat-label>Carro</mat-label>
+        <input matInput formControlName="filterCar" [(ngModel)]="filter.car" (input)="updateFilter()">
+      </mat-form-field>
+      <mat-form-field class="left-container-content">
+        <mat-label>Marca</mat-label>
+        <input matInput formControlName="filterCarBrand" [(ngModel)]="filter.car_brand" (input)="updateFilter()">
+      </mat-form-field>
+      <mat-form-field class="left-container-content">
+        <mat-label>Modelo</mat-label>
+        <input matInput formControlName="filterCarModel" [(ngModel)]="filter.car_model" (input)="updateFilter()">
+      </mat-form-field>
+
+      <mat-form-field class="left-container-content">
+        <mat-label>Ano</mat-label>
+        <mat-select formControlName="filterYear" [(ngModel)]="filter.year" (ngModelChange)="updateFilter()">
+          <mat-option *ngFor="let year of years" value="{{year}}" (keyup)="updateFilter()">{{year}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <span>Resultados encontrados: {{filteredParts.length}}</span>
+      <button mat-raised-button color="primary" class="button-clear" type="submit" name="buttonClear">Limpar
+        Filtros</button>
+    </form>
+  </div>
+
+  <ng-container *ngIf="filteredParts.length > 0 then listParts else noContent"></ng-container>
+
+  <ng-template #listParts>
+    <div class="right-container" [ngStyle]="{ 'margin-left': isFixed ? '21rem' : '0' }">
+      <div *ngFor="let part of filteredParts">
+        <app-parts-card [automotivePartList]="part"></app-parts-card>
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #noContent>
+    <div class="right-container" [ngStyle]="{ 'margin-left': isFixed ? '21rem' : '0' }">
+      <div class="no-content">
+        <div class="no-content-text">Nenhum resultado obtido, tente novamente.</div>
+        <img class="no-content-image" src="../../../../../assets/images/not-found.svg" alt="Nenhuma peça encontrada">
+      </div>
+    </div>
+  </ng-template>
+
+
+</div>

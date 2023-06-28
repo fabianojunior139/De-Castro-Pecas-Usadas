@@ -1,0 +1,80 @@
+@import '../../../styles.css';
+
+.part-card {
+  width: 100%;
+  height: 7.5rem;
+  border: 1px solid var(--cor-cinza-clara3);
+  cursor: pointer;
+  padding: 1rem 2rem;
+  margin-bottom: 0.5rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.part-card:hover {
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+  display: flex;
+}
+
+.card-icon {
+  height: 5.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2rem;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  height: 3rem;
+  width: 3rem;
+}
+
+.card-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.card-division {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 2rem;
+}
+
+.part-name {
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+
+.part-price {
+  font-size: 1.25rem;
+  font-weight: 900;
+}
+
+.part-cars-info {
+  font-size: 1.125rem;
+}
+
+.part-car-name {
+  font-weight: 900;
+}
+
+.card-divisor {
+  color: var(--cor-cinza-clara2);
+}
+
+.part-quantity {
+  font-size: 1.125rem;
+}
+
+.part-stock-value {
+  font-weight: 900;
+}

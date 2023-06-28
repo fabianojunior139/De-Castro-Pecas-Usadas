@@ -1,10 +1,10 @@
 @import "../../../styles.css";
 
 .sidenav {
-  background: var(--cor-cinza-escuro);
+  background: var(--cor-primary);
   transition: all 0.25s ease;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   width: 5rem;
   height: 100vh;
@@ -114,7 +114,8 @@
 }
 
 .active-sublevel {
-  color: #f3f3f3 !important;
+  color: var(--cor-branca) !important;
+  font-weight: 700;
 }
 
 .active .sidenav-link-icon,
@@ -135,17 +136,19 @@
 .sublevel-nav {
   list-style: none;
   margin-bottom: 0 !important;
+  padding-left: 1rem !important;
 }
 
 .sublevel-nav-link {
   display: flex;
   align-items: center;
   height: 3rem;
-  color: #898989;
+  color: var(--cor-cinza-clara2);
   text-decoration: none;
   border-radius: 0.625rem;
   transition: all 0.3s ease;
   list-style: none;
+  margin: 0.25rem 0;
 }
 
 .sublevel-link-icon {
@@ -158,4 +161,5 @@
 
 .sublevel-nav-link:hover {
   color: #f3f3f3;
+  background-color: var(--cor-primary-variance);
 }

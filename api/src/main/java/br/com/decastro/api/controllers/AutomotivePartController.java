@@ -23,7 +23,7 @@ public class AutomotivePartController {
 
     //Listando todas as peças cadastradas na base de dados
     @GetMapping
-    public ResponseEntity<Page<AutomotivePartDataToList>> listAll(@PageableDefault(size = 10, sort = "name") Pageable pageable) {
+    public ResponseEntity<Page<AutomotivePartDataToList>> listAll(@PageableDefault(size = 50, sort = "id") Pageable pageable) {
         var page = automotivePartRepository.findAll(pageable).map(AutomotivePartDataToList::new);
         return ResponseEntity.ok(page);
     }

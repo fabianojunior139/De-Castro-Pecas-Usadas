@@ -3,7 +3,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Account, IToken } from '../models/auth';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -30,7 +30,9 @@ export class AuthService {
         this.updateLoggedIn();
         this.router.navigate(['/dashboard/stock/list']);
       },
-      error: () => {
+      error: (error) => {
+        console.log(error);
+
         this.utilService.handleToast('Credenciais inválidas');
       },
     });
@@ -62,5 +64,10 @@ export class AuthService {
     } else {
       return true;
     }
+  }
+
+  getToken(): string | null {
+    var token = window.localStorage.getItem('token');
+    return token;
   }
 }
