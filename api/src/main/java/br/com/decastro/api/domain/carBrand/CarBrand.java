@@ -1,7 +1,5 @@
 package br.com.decastro.api.domain.carBrand;
 
-import br.com.decastro.api.domain.carBrand.CarBrandDataToList;
-import br.com.decastro.api.domain.carBrand.CarBrandRegisterData;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

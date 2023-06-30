@@ -30,12 +30,18 @@
 
 .form-button,
 mat-form-field {
-  width: 60%;
+  width: 66%;
 }
 
 .form-button {
-  background-color: var(--color-blue) !important;
+  background-color: var(--color-orange) !important;
   color: var(--cor-branca) !important;
+  margin-top: 0.5rem;
+}
+
+mat-error {
+  padding: 0 !important;
+  text-align: start !important;
 }
 
 .text-side {

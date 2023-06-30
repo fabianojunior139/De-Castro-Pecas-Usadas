@@ -1,11 +1,10 @@
 package br.com.decastro.api.controllers;
 
-import br.com.decastro.api.domain.carModel.CarModelDataToList;
-import br.com.decastro.api.domain.carModel.CarModelRegisterData;
-import br.com.decastro.api.domain.carModel.CarModel;
-import br.com.decastro.api.domain.carModel.CarModelRepository;
+import br.com.decastro.api.domain.car.CarBusinessRules;
+import br.com.decastro.api.domain.carModel.*;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -19,14 +18,16 @@ public class CarModelController {
 
     //Injetando repositório dos modelos de carro
     private final CarModelRepository repository;
+    private final CarModelBusinessRules carModelBusinessRules;
 
-    public CarModelController(CarModelRepository carModelRepository) {
+    public CarModelController(CarModelRepository carModelRepository, CarModelBusinessRules carModelBusinessRules) {
         this.repository = carModelRepository;
+        this.carModelBusinessRules = carModelBusinessRules;
     }
 
     //Listando todos os modelos de carros cadastrados no banco de dados
     @GetMapping
-    public ResponseEntity<Page<CarModelDataToList>> listAllCarModels(@PageableDefault(size = 10, sort = "model") Pageable pageable) {
+    public ResponseEntity<Page<CarModelDataToList>> listAllCarModels(@PageableDefault(size = 200, sort = "id") Pageable pageable) {
         var carModels = repository.findAll(pageable).map(CarModelDataToList::new);
         return ResponseEntity.ok(carModels);
     }
@@ -42,26 +43,24 @@ public class CarModelController {
     @PostMapping
     @Transactional
     public ResponseEntity register(@RequestBody @Valid CarModelRegisterData data, UriComponentsBuilder uriBuilder) {
-        var carModel = new CarModel(data);
-        repository.save(carModel);
-        var uri = uriBuilder.path("/car/{id}").buildAndExpand(carModel.getId()).toUri();
-        return ResponseEntity.created(uri).body(new CarModelDataToList(carModel));
+        var carModel = carModelBusinessRules.register(data);
+        var uri = uriBuilder.path("/car/{id}").buildAndExpand(carModel.id()).toUri();
+        return ResponseEntity.created(uri).body(carModel);
     }
 
     //Alterando um registro de um modelo de carro na base de dados
     @PutMapping
     @Transactional
-    public ResponseEntity update(@RequestBody @Valid CarModelDataToList data) {
-        var carBrand = repository.getReferenceById(data.id());
-        carBrand.updateInfo(data);
-        return ResponseEntity.ok(new CarModelDataToList(carBrand));
+    public ResponseEntity update(@RequestBody @Valid CarModelDataToUpdate data) {
+        var car = carModelBusinessRules.udpate(data);
+        return ResponseEntity.ok(car);
     }
 
     //Deletando um registro de um modelo de um carro da base de dados
     @DeleteMapping("/{id}")
     @Transactional
     public ResponseEntity delete(@PathVariable Long id) {
-        repository.deleteById(id);
+        carModelBusinessRules.delete(id);
         return ResponseEntity.noContent().build();
     }
 }

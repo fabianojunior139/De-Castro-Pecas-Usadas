@@ -1,7 +1,7 @@
 @import "../../../styles.css";
 
 .sidenav {
-  background: var(--cor-primary);
+  background: var(--color-blue);
   transition: all 0.25s ease;
   position: fixed;
   z-index: 2;
@@ -19,7 +19,7 @@
 }
 
 .logo {
-  background-color: var(--cor-branca);
+  background-color: var(--color-dark-blue);
   text-align: center;
   width: 3rem;
   min-width: 3rem;
@@ -29,6 +29,7 @@
   font-weight: 900;
   cursor: pointer;
   border: none;
+  color: var(--cor-branca);
 }
 
 .logo-text {
@@ -78,19 +79,15 @@
   display: flex;
   align-items: center;
   height: 3rem;
-  color: #f3f3f3;
+  color: var(--color-gray);
   text-decoration: none;
   transition: all 0.3s ease;
   border-radius: 0.625rem;
 }
 
 .sidenav-nav-link:hover {
-  background-color: var(--cor-branca);
-  color: var(--cor-preta);
-}
-
-.sidenav-nav-link:hover .menu-collapse-icon {
-  color: var(--cor-preta);
+  background-color: var(--color-dark-blue);
+  color: var(--cor-branca);
 }
 
 .menu-collapse-icon {
@@ -130,7 +127,7 @@
   min-width: 2rem;
   margin: auto 0.5rem auto auto;
   text-align: center;
-  color: #f3f3f3;
+  color: var(--color-gray);
 }
 
 .sublevel-nav {
@@ -143,7 +140,7 @@
   display: flex;
   align-items: center;
   height: 3rem;
-  color: var(--cor-cinza-clara2);
+  color: var(--color-gray);
   text-decoration: none;
   border-radius: 0.625rem;
   transition: all 0.3s ease;
@@ -160,6 +157,6 @@
 }
 
 .sublevel-nav-link:hover {
-  color: #f3f3f3;
-  background-color: var(--cor-primary-variance);
+  color: var(--color-gray);
+  background-color: var(--color-dark-blue);
 }

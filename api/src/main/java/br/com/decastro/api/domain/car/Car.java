@@ -24,10 +24,4 @@ public class Car {
         this.name = data.name();
     }
 
-    public void updateInfo(CarDataToList data) {
-        if (data.name() != null) {
-            this.name = data.name();
-        }
-    }
-
 }

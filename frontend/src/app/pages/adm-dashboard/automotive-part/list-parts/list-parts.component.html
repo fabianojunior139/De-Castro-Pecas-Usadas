@@ -1,7 +1,7 @@
-<h1 class="title">Lista de Peças Cadastradas</h1>
+<h1 class="title">PEÇAS CADASTRADAS</h1>
 <div class="list-parts">
   <div class="left-container" [ngClass]="{'fixed': isFixed}">
-    <h3 class="filter-title">Aplique os filtros</h3>
+    <h3 class="filter-title">FILTROS</h3>
     <form [formGroup]="formFilter" (ngSubmit)="formReset()">
       <mat-form-field class="left-container-content">
         <mat-label>Nome da peça</mat-label>
@@ -27,8 +27,8 @@
         </mat-select>
       </mat-form-field>
 
-      <span>Resultados encontrados: {{filteredParts.length}}</span>
-      <button mat-raised-button color="primary" class="button-clear" type="submit" name="buttonClear">Limpar
+      <p class="results">Resultados encontrados: {{filteredParts.length}}</p>
+      <button mat-raised-button class="button-clear" type="submit" name="buttonClear">Limpar
         Filtros</button>
     </form>
   </div>

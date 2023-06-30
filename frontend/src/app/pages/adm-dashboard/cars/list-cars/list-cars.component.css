@@ -1,0 +1,24 @@
+.container {
+  width: 80% !important;
+}
+
+.table-title {
+  font-family: "Belanosima", sans-serif !important;
+  font-weight: 900;
+  text-align: center;
+  padding-top: 1rem;
+  margin: 0rem;
+}
+
+th {
+  font-weight: 900;
+}
+
+.icon {
+  background-color: #f66b0e;
+  margin-right: 0.5rem;
+}
+
+.car-name {
+  text-transform: uppercase;
+}

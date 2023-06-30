@@ -48,7 +48,6 @@ public class AnnouncementBusinessRules {
         var carModel = carModelRepository.getReferenceById(data.car_model_id());
         var user = userRepository.getReferenceById(data.user_id());
 
-
         var announcement = new Announcement(null, data.publicationData(), data.description(), data.year(), data.mileage(),
                 data.motorPower(), data.fuelType(), data.color(), data.exchange(), data.numberDoors(), data.typeDirection(),
                 data.airConditioning(), data.eletricGlass(), user, car, carBrand, carModel);

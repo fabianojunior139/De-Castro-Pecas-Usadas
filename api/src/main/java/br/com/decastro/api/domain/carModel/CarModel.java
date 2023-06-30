@@ -27,9 +27,4 @@ public class CarModel {
         this.model = data.model();
     }
 
-    public void updateInfo(CarModelDataToList data) {
-        if (data.model() != null) {
-            this.model = data.model();
-        }
-    }
 }

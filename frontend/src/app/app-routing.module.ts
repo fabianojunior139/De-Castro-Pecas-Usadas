@@ -15,8 +15,6 @@ import { ListAnnouncementsComponent } from './pages/adm-dashboard/announcements/
 import { RegisterAnnouncementsComponent } from './pages/adm-dashboard/announcements/register-announcements/register-announcements.component';
 import { UpdateAnnouncementComponent } from './pages/adm-dashboard/announcements/update-announcement/update-announcement.component';
 import { ListCarsComponent } from './pages/adm-dashboard/cars/list-cars/list-cars.component';
-import { CreateCarsComponent } from './pages/adm-dashboard/cars/create-cars/create-cars.component';
-import { UpdateCarsComponent } from './pages/adm-dashboard/cars/update-cars/update-cars.component';
 import { ListCarModelsComponent } from './pages/adm-dashboard/car-models/list-car-models/list-car-models.component';
 import { CreateCarModelsComponent } from './pages/adm-dashboard/car-models/create-car-models/create-car-models.component';
 import { UpdateCarModelsComponent } from './pages/adm-dashboard/car-models/update-car-models/update-car-models.component';
@@ -26,6 +24,7 @@ import { UpdateCarBrandsComponent } from './pages/adm-dashboard/car-brands/updat
 import { ListUsersComponent } from './pages/adm-dashboard/users/list-users/list-users.component';
 import { CreateUsersComponent } from './pages/adm-dashboard/users/create-users/create-users.component';
 import { UpdateUsersComponent } from './pages/adm-dashboard/users/update-users/update-users.component';
+import { FormCarsComponent } from './pages/adm-dashboard/cars/form-cars/form-cars.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -53,8 +52,8 @@ const routes: Routes = [
       { path: 'announcements/update', component: UpdateAnnouncementComponent },
       //Carros
       { path: 'cars/list', component: ListCarsComponent },
-      { path: 'cars/create', component: CreateCarsComponent },
-      { path: 'cars/update', component: UpdateCarsComponent },
+      { path: 'cars/create', component: FormCarsComponent },
+      { path: 'cars/edit/:id', component: FormCarsComponent },
       //Modelo de carros
       { path: 'cars-models/list', component: ListCarModelsComponent },
       { path: 'cars-models/create', component: CreateCarModelsComponent },

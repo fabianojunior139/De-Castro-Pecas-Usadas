@@ -17,6 +17,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatTableModule } from '@angular/material/table';
 
 export const materialModules = [
   MatFormFieldModule,
@@ -38,4 +39,5 @@ export const materialModules = [
   MatProgressBarModule,
   MatTabsModule,
   MatButtonToggleModule,
+  MatTableModule,
 ];

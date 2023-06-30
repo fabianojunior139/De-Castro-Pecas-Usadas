@@ -1,3 +1,4 @@
+import { UtilService } from './../services/util.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -6,13 +7,13 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthGuard {
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private authService: AuthService, private utilService: UtilService) {}
 
   canActivate(): boolean {
     if (this.authService.isUserLoggedIn()) {
       return true;
     } else {
-      this.router.navigate(['login']);
+      this.utilService.handleToast('Usuário sem autorização, faça o login para continuar!', 'login')
       return false;
     }
   }
