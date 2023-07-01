@@ -71,31 +71,31 @@ export const navbarData: INavbarData[] = [
     ],
   },
   {
-    routerLink: 'cars-models',
+    routerLink: 'car-models',
     icon: faTruck,
     label: 'Modelos',
     items: [
       {
-        routerLink: 'cars-models/list',
+        routerLink: 'car-models/list',
         label: 'Lista de Modelos',
       },
       {
-        routerLink: 'cars-models/create',
+        routerLink: 'car-models/create',
         label: 'Cadastrar Modelos',
       },
     ],
   },
   {
-    routerLink: 'cars-brands',
+    routerLink: 'car-brands',
     icon: faCaravan,
     label: 'Marcas',
     items: [
       {
-        routerLink: 'cars-brands/list',
+        routerLink: 'car-brands/list',
         label: 'Lista de Marcas',
       },
       {
-        routerLink: 'cars-brands/create',
+        routerLink: 'car-brands/create',
         label: 'Cadastrar Marcas',
       },
     ],

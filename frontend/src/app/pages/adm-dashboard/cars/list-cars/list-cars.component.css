@@ -2,13 +2,27 @@
   width: 80% !important;
 }
 
+.table-header {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
 .table-title {
   font-family: "Belanosima", sans-serif !important;
   font-weight: 900;
-  text-align: center;
   padding-top: 1rem;
+  text-align: center;
   margin: 0rem;
   font-size: 1.5rem;
+}
+
+.header-button {
+  margin-top: 0.875rem;
+  background-color: #f66b0e !important;
+  color: #fff !important;
+  position: absolute;
+  right: 0;
 }
 
 th,
@@ -30,7 +44,7 @@ td:nth-child(2) {
 }
 
 th:nth-child(3) {
-  padding-left: 2rem !important;
+  padding-left: 1.5rem !important;
 }
 
 .icon {

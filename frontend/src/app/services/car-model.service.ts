@@ -1,61 +1,61 @@
+import { Injectable } from '@angular/core';
 import { ResponseAPI } from './../models/api';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Method } from '../models/api';
-import { ICar } from '../models/car';
+import { ICarModel } from '../models/car-model';
 import { UtilService } from './util.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CarService {
-  private readonly baseUrl = `/api/car`;
+export class CarModelService {
+  private readonly baseUrl = `/api/car-model`;
 
   constructor(
     private httpClient: HttpClient,
     private utilService: UtilService
   ) {}
 
-  //Listando todos os carros
+  //Listando todos os modelos de carros
   list(): Observable<ResponseAPI> {
     return this.httpClient.get<ResponseAPI>(this.baseUrl);
   }
 
   //Listando carro por Id
-  findCarById(id: string): Observable<ICar> {
+  findCarModelById(id: string): Observable<ICarModel> {
     const url = this.baseUrl + '/' + id;
-    return this.httpClient.get<ICar>(url);
+    return this.httpClient.get<ICarModel>(url);
   }
 
-  //Salvado e editando carros
-  saveCar(car: ICar, method: Method): void {
+  //Salvado e editando modelos de carros
+  saveCarModel(car: ICarModel, method: Method): void {
     let res;
 
     switch (method) {
       case 'post':
-        res = this.httpClient.post<ICar>(this.baseUrl, car);
+        res = this.httpClient.post<ICarModel>(this.baseUrl, car);
         break;
       case 'put':
-        res = this.httpClient.put<ICar>(this.baseUrl, car);
+        res = this.httpClient.put<ICarModel>(this.baseUrl, car);
         break;
     }
 
     res.subscribe({
-      next: (APIresponse: ICar) => {
+      next: (APIresponse: ICarModel) => {
         this.utilService.handleToast(
-          'O carro ' + APIresponse.name + ' foi salvo com sucesso'
+          'O modelo ' + APIresponse.model + ' foi salvo com sucesso'
         );
       },
       error: () => {
         this.utilService.handleToast(
-          'O carro informado já está cadastrado no sistema'
+          'O modelo informado já está cadastrado no sistema'
         );
       },
     });
   }
 
-  //Deletando um carro
+  //Deletando um modelo
   delete(id: number): void {
     const url = this.baseUrl + '/' + id;
     this.httpClient.delete(url).subscribe({

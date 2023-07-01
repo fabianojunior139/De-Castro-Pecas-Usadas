@@ -1,1 +1,51 @@
-<p>form-car-brands works!</p>
+<div class="form">
+
+  <ng-container *ngIf="
+        isEdit
+        then edit;
+        else create
+      "></ng-container>
+
+  <ng-template #create>
+    <div class="form-content">
+      <form class="car-form" [formGroup]="carBrandForm">
+        <mat-form-field>
+          <mat-label>Nome da marca</mat-label>
+          <input matInput class="form-input" placeholder="Ex: Gol" formControlName="name" required>
+          <mat-error>A marca deve ter pelo menos 2 caracteres</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="form-button" [disabled]="carBrandForm.invalid"
+          (click)="OnSubmit()">Cadastrar</button>
+      </form>
+
+      <div class="text-side">
+        <h1 class="title">Cadastro de Marcas</h1>
+        <p class="description">Cadastre uma nova marca ao sistema</p>
+        <img class="img" src="../../../../../assets/images/car_brand.svg" alt="imagem de uma kombi">
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #edit>
+    <div class="form-content">
+      <form class="car-form" [formGroup]="carBrandForm">
+        <input hidden formControlName="id">
+        <mat-form-field>
+          <mat-label>Nome da marca</mat-label>
+          <input matInput class="form-input" placeholder="Ex: Gol" formControlName="name" required>
+          <mat-error>A marca deve ter pelo menos 2 caracteres</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="form-button" [disabled]="carBrandForm.invalid"
+          (click)="OnSubmit()">Editar</button>
+      </form>
+
+      <div class="text-side">
+        <h1 class="title">Edição de Marcas</h1>
+        <p class="description">Edite uma marca cadastrada no sistema</p>
+        <img class="img" src="../../../../../assets/images/car_brand.svg" alt="imagem de um carro da marca citroen">
+      </div>
+    </div>
+  </ng-template>
+</div>

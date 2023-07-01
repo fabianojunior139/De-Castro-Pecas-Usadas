@@ -26,7 +26,7 @@ public class CarController {
 
     //Listando todos os carros cadastrados na base de dados
     @GetMapping
-    public ResponseEntity<Page<CarDataToList>> listAllCars(@PageableDefault(size = 200) Pageable pageable) {
+    public ResponseEntity<Page<CarDataToList>> listAllCars(@PageableDefault(size = 200, sort = "id") Pageable pageable) {
         var cars = repository.findAll(pageable).map(CarDataToList::new);
         return ResponseEntity.ok(cars);
     }

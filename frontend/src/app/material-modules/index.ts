@@ -18,6 +18,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatTableModule } from '@angular/material/table';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 export const materialModules = [
   MatFormFieldModule,
@@ -40,4 +41,5 @@ export const materialModules = [
   MatTabsModule,
   MatButtonToggleModule,
   MatTableModule,
+  MatProgressSpinnerModule
 ];

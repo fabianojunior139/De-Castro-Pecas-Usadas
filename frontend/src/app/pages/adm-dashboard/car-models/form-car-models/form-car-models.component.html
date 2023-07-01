@@ -1,1 +1,51 @@
-<p>form-car-models works!</p>
+<div class="form">
+
+  <ng-container *ngIf="
+        isEdit
+        then edit;
+        else create
+      "></ng-container>
+
+  <ng-template #create>
+    <div class="form-content">
+      <form class="car-form" [formGroup]="carModelForm">
+        <mat-form-field>
+          <mat-label>Nome do modelo</mat-label>
+          <input matInput class="form-input" placeholder="Ex: Gol" formControlName="model" required>
+          <mat-error>O modelo deve ter pelo menos 2 caracteres</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="form-button" [disabled]="carModelForm.invalid"
+          (click)="OnSubmit()">Cadastrar</button>
+      </form>
+
+      <div class="text-side">
+        <h1 class="title">Cadastro de Modelos</h1>
+        <p class="description">Cadastre um novo modelo de carro ao sistema</p>
+        <img class="img" src="../../../../../assets/images/car_model.svg" alt="imagem de uma kombi">
+      </div>
+    </div>
+  </ng-template>
+
+  <ng-template #edit>
+    <div class="form-content">
+      <form class="car-form" [formGroup]="carModelForm">
+        <input hidden formControlName="id">
+        <mat-form-field>
+          <mat-label>Nome do modelo</mat-label>
+          <input matInput class="form-input" placeholder="Ex: Gol" formControlName="model" required>
+          <mat-error>O modelo deve ter pelo menos 2 caracteres</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="form-button" [disabled]="carModelForm.invalid"
+          (click)="OnSubmit()">Editar</button>
+      </form>
+
+      <div class="text-side">
+        <h1 class="title">Edição de Modelos</h1>
+        <p class="description">Edite um modelo de carro cadastrado no sistema</p>
+        <img class="img" src="../../../../../assets/images/car_model.svg" alt="imagem de uma kombi">
+      </div>
+    </div>
+  </ng-template>
+</div>

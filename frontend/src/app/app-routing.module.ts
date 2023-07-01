@@ -52,13 +52,13 @@ const routes: Routes = [
       { path: 'cars/create', component: FormCarsComponent },
       { path: 'cars/edit/:id', component: FormCarsComponent },
       //Modelo de carros
-      { path: 'cars-models/list', component: ListCarModelsComponent },
-      { path: 'cars-models/create', component: FormCarModelsComponent },
-      { path: 'cars-models/edit:id', component: FormCarModelsComponent },
+      { path: 'car-models/list', component: ListCarModelsComponent },
+      { path: 'car-models/create', component: FormCarModelsComponent },
+      { path: 'car-models/edit/:id', component: FormCarModelsComponent },
       //Marca de carros
-      { path: 'cars-brands/list', component: ListCarBrandsComponent },
-      { path: 'cars-brands/create', component: FormCarBrandsComponent },
-      { path: 'cars-brands/edit:id', component: FormCarBrandsComponent },
+      { path: 'car-brands/list', component: ListCarBrandsComponent },
+      { path: 'car-brands/create', component: FormCarBrandsComponent },
+      { path: 'car-brands/edit/:id', component: FormCarBrandsComponent },
       //Usuários
       { path: 'users/list', component: ListUsersComponent },
       { path: 'users/create', component: FormUsersComponent },

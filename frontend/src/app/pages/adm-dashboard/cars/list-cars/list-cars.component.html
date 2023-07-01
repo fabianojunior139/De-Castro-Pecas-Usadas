@@ -1,5 +1,8 @@
 <div class="mat-elevation-z8 container">
-  <h1 class="table-title">Lista de Carros Cadastrados</h1>
+  <div class="table-header">
+    <h1 class="table-title">Lista de Carros Cadastrados</h1>
+    <button class="header-button" mat-raised-button routerLink="../create">Cadastrar novo</button>
+  </div>
 
   <table mat-table class="table" [dataSource]="dataSource">
 

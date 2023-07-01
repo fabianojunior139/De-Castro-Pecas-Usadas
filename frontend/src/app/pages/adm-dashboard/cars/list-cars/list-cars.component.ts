@@ -2,13 +2,7 @@ import { UtilService } from './../../../../services/util.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { ICar } from './../../../../models/car';
 import { CarService } from './../../../../services/car.service';
-import {
-  AfterViewInit,
-  Component,
-  EventEmitter,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
@@ -35,6 +29,10 @@ export class ListCarsComponent implements AfterViewInit {
     this.findAllCars();
   }
 
+  ngOnInit(): void {
+    this.findAllCars();
+  }
+
   constructor(
     private carService: CarService,
     private router: Router,
@@ -56,10 +54,12 @@ export class ListCarsComponent implements AfterViewInit {
     });
   }
 
+  ////Editando carros pela tabela
   onEdit(car: ICar): void {
     this.router.navigate(['dashboard/cars/edit', car.id]);
   }
 
+  //Excluindo carros pela tabela
   onDelete(car: ICar): void {
     this.dialogService.confirmDialog(car.name).subscribe({
       next: (response) => {
