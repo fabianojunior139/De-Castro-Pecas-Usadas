@@ -8,10 +8,29 @@
   text-align: center;
   padding-top: 1rem;
   margin: 0rem;
+  font-size: 1.5rem;
+}
+
+th,
+td {
+  font-family: "Belanosima", sans-serif !important;
 }
 
 th {
   font-weight: 900;
+  font-size: 1.125rem;
+}
+
+td {
+  font-size: 1rem;
+}
+
+td:nth-child(2) {
+  padding-left: 3rem !important;
+}
+
+th:nth-child(3) {
+  padding-left: 2rem !important;
 }
 
 .icon {

@@ -1,9 +1,9 @@
+import { ResponseAPI } from './../models/api';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Method, ResponseAPI } from '../models/api';
+import { Method } from '../models/api';
 import { ICar } from '../models/car';
-import { Icon } from '@fortawesome/fontawesome-svg-core';
 import { UtilService } from './util.service';
 
 @Injectable({
@@ -22,6 +22,13 @@ export class CarService {
     return this.httpClient.get<ResponseAPI>(this.baseUrl);
   }
 
+  //Listando carro por Id
+  findCarById(findCarById: string): Observable<ICar> {
+    const url = this.baseUrl + '/' + findCarById;
+    return this.httpClient.get<ICar>(url);
+  }
+
+  //Salvado e editando carros
   saveCar(car: ICar, method: Method): void {
     let res;
 
@@ -35,19 +42,31 @@ export class CarService {
     }
 
     res.subscribe({
-      next: (APIresponse) => {
+      next: (APIresponse: ICar) => {
         this.utilService.handleToast(
           'O carro ' + APIresponse.name + ' foi salvo com sucesso'
         );
       },
-      error: (error) => {
-        console.log(error);
+      error: () => {
+        this.utilService.handleToast(
+          'O carro informado já está cadastrado no sistema'
+        );
       },
     });
   }
 
-  findCarById(findCarById: string): Observable<ICar> {
-    const url = this.baseUrl + '/' + findCarById;
-    return this.httpClient.get<ICar>(url);
+  //Deletando um carro
+  delete(id: number): void {
+    const url = this.baseUrl + '/' + id;
+    this.httpClient.delete(url).subscribe({
+      next: () => {
+        this.list();
+      },
+      error: () => {
+        this.utilService.handleToast(
+          'Houve um erro inesperado, tente novamente'
+        );
+      },
+    });
   }
 }

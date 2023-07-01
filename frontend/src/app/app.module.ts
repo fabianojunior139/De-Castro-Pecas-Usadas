@@ -23,27 +23,22 @@ import { UpdateAnnouncementComponent } from './pages/adm-dashboard/announcements
 import { ListPartsComponent } from './pages/adm-dashboard/automotive-part/list-parts/list-parts.component';
 import { RegisterPartsComponent } from './pages/adm-dashboard/automotive-part/register-parts/register-parts.component';
 import { UpdatePartsComponent } from './pages/adm-dashboard/automotive-part/update-parts/update-parts.component';
-import { DeleteCarBrandsComponent } from './pages/adm-dashboard/car-brands/delete-car-brands/delete-car-brands.component';
 import { ListCarBrandsComponent } from './pages/adm-dashboard/car-brands/list-car-brands/list-car-brands.component';
-import { RegisterCarBrandsComponent } from './pages/adm-dashboard/car-brands/register-car-brands/register-car-brands.component';
-import { UpdateCarBrandsComponent } from './pages/adm-dashboard/car-brands/update-car-brands/update-car-brands.component';
-import { CreateCarModelsComponent } from './pages/adm-dashboard/car-models/create-car-models/create-car-models.component';
-import { DeleteCarModelsComponent } from './pages/adm-dashboard/car-models/delete-car-models/delete-car-models.component';
 import { ListCarModelsComponent } from './pages/adm-dashboard/car-models/list-car-models/list-car-models.component';
-import { UpdateCarModelsComponent } from './pages/adm-dashboard/car-models/update-car-models/update-car-models.component';
 import { ListCarsComponent } from './pages/adm-dashboard/cars/list-cars/list-cars.component';
 import { CreateSalesComponent } from './pages/adm-dashboard/sales/create-sales/create-sales.component';
 import { ListSalesComponent } from './pages/adm-dashboard/sales/list-sales/list-sales.component';
 import { UpdateSalesComponent } from './pages/adm-dashboard/sales/update-sales/update-sales.component';
-import { CreateUsersComponent } from './pages/adm-dashboard/users/create-users/create-users.component';
-import { DeleteUsersComponent } from './pages/adm-dashboard/users/delete-users/delete-users.component';
 import { ListUsersComponent } from './pages/adm-dashboard/users/list-users/list-users.component';
-import { UpdateUsersComponent } from './pages/adm-dashboard/users/update-users/update-users.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { FiltersPipe } from './pipes/filters.pipe';
 import { FormCarsComponent } from './pages/adm-dashboard/cars/form-cars/form-cars.component';
+import { FormUsersComponent } from './pages/adm-dashboard/users/form-users/form-users.component';
+import { FormCarModelsComponent } from './pages/adm-dashboard/car-models/form-car-models/form-car-models.component';
+import { FormCarBrandsComponent } from './pages/adm-dashboard/car-brands/form-car-brands/form-car-brands.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -64,25 +59,20 @@ import { FormCarsComponent } from './pages/adm-dashboard/cars/form-cars/form-car
     RegisterPartsComponent,
     UpdatePartsComponent,
     ListCarBrandsComponent,
-    RegisterCarBrandsComponent,
-    UpdateCarBrandsComponent,
-    DeleteCarBrandsComponent,
-    DeleteCarModelsComponent,
-    CreateCarModelsComponent,
     ListCarModelsComponent,
-    UpdateCarModelsComponent,
     ListCarsComponent,
     CreateSalesComponent,
     UpdateSalesComponent,
     ListSalesComponent,
     ListUsersComponent,
-    UpdateUsersComponent,
-    CreateUsersComponent,
-    DeleteUsersComponent,
     NavbarAdmComponent,
     PartsCardComponent,
     FiltersPipe,
     FormCarsComponent,
+    FormUsersComponent,
+    FormCarModelsComponent,
+    FormCarBrandsComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header > h2 {
+  margin: 0;
+}
+
+.title {
+  font-family: "Montserrat", sans-serif;
+}
+
+span {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.button-x {
+  background-color: #f66b0e !important;
+  margin-right: 0.25rem;
+}
+  
+.icon {
+  color: #fff;
+}
+
+.button-confirm {
+  background-color: #f66b0e !important;
+  color: #fff !important;
+}

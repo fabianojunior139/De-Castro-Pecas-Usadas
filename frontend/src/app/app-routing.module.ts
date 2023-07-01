@@ -16,15 +16,12 @@ import { RegisterAnnouncementsComponent } from './pages/adm-dashboard/announceme
 import { UpdateAnnouncementComponent } from './pages/adm-dashboard/announcements/update-announcement/update-announcement.component';
 import { ListCarsComponent } from './pages/adm-dashboard/cars/list-cars/list-cars.component';
 import { ListCarModelsComponent } from './pages/adm-dashboard/car-models/list-car-models/list-car-models.component';
-import { CreateCarModelsComponent } from './pages/adm-dashboard/car-models/create-car-models/create-car-models.component';
-import { UpdateCarModelsComponent } from './pages/adm-dashboard/car-models/update-car-models/update-car-models.component';
 import { ListCarBrandsComponent } from './pages/adm-dashboard/car-brands/list-car-brands/list-car-brands.component';
-import { RegisterCarBrandsComponent } from './pages/adm-dashboard/car-brands/register-car-brands/register-car-brands.component';
-import { UpdateCarBrandsComponent } from './pages/adm-dashboard/car-brands/update-car-brands/update-car-brands.component';
 import { ListUsersComponent } from './pages/adm-dashboard/users/list-users/list-users.component';
-import { CreateUsersComponent } from './pages/adm-dashboard/users/create-users/create-users.component';
-import { UpdateUsersComponent } from './pages/adm-dashboard/users/update-users/update-users.component';
 import { FormCarsComponent } from './pages/adm-dashboard/cars/form-cars/form-cars.component';
+import { FormUsersComponent } from './pages/adm-dashboard/users/form-users/form-users.component';
+import { FormCarModelsComponent } from './pages/adm-dashboard/car-models/form-car-models/form-car-models.component';
+import { FormCarBrandsComponent } from './pages/adm-dashboard/car-brands/form-car-brands/form-car-brands.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -56,16 +53,16 @@ const routes: Routes = [
       { path: 'cars/edit/:id', component: FormCarsComponent },
       //Modelo de carros
       { path: 'cars-models/list', component: ListCarModelsComponent },
-      { path: 'cars-models/create', component: CreateCarModelsComponent },
-      { path: 'cars-models/update', component: UpdateCarModelsComponent },
+      { path: 'cars-models/create', component: FormCarModelsComponent },
+      { path: 'cars-models/edit:id', component: FormCarModelsComponent },
       //Marca de carros
       { path: 'cars-brands/list', component: ListCarBrandsComponent },
-      { path: 'cars-brands/create', component: RegisterCarBrandsComponent },
-      { path: 'cars-brands/update', component: UpdateCarBrandsComponent },
+      { path: 'cars-brands/create', component: FormCarBrandsComponent },
+      { path: 'cars-brands/edit:id', component: FormCarBrandsComponent },
       //Usuários
       { path: 'users/list', component: ListUsersComponent },
-      { path: 'users/create', component: CreateUsersComponent },
-      { path: 'users/update', component: UpdateUsersComponent },
+      { path: 'users/create', component: FormUsersComponent },
+      { path: 'users/edit/:id', component: FormUsersComponent },
     ],
     canActivate: [AuthGuard],
   },

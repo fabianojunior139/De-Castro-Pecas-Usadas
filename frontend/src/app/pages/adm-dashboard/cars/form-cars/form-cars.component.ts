@@ -45,7 +45,7 @@ export class FormCarsComponent {
       const resEdit = this.carService.findCarById(carId);
 
       resEdit.subscribe({
-        next: (APIresponse) => {
+        next: (APIresponse: ICar) => {
           this.cars = APIresponse;
           this.carForm.patchValue({
             id: this.cars.id,

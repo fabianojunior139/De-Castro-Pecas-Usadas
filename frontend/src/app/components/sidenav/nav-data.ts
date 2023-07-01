@@ -21,11 +21,7 @@ export const navbarData: INavbarData[] = [
       },
       {
         routerLink: 'stock/create',
-        label: 'Registro de Peças',
-      },
-      {
-        routerLink: 'stock/update',
-        label: 'Atualização de Peça',
+        label: 'Cadastrar peças',
       },
     ],
   },
@@ -40,11 +36,7 @@ export const navbarData: INavbarData[] = [
       },
       {
         routerLink: 'sales/create',
-        label: 'Registro de Vendas',
-      },
-      {
-        routerLink: 'sales/update',
-        label: 'Atualizar Venda',
+        label: 'Cadastrar Vendas',
       },
     ],
   },
@@ -55,15 +47,11 @@ export const navbarData: INavbarData[] = [
     items: [
       {
         routerLink: 'announcements/list',
-        label: 'Anúncios',
+        label: 'Lista de Anúncios',
       },
       {
         routerLink: 'announcements/create',
         label: 'Cadastrar Anúncios',
-      },
-      {
-        routerLink: 'announcements/update',
-        label: 'Atualizar Anúncio',
       },
     ],
   },
@@ -80,10 +68,6 @@ export const navbarData: INavbarData[] = [
         routerLink: 'cars/create',
         label: 'Cadastrar Carro',
       },
-      {
-        routerLink: 'cars/update',
-        label: 'Atualizar Carro',
-      },
     ],
   },
   {
@@ -97,11 +81,7 @@ export const navbarData: INavbarData[] = [
       },
       {
         routerLink: 'cars-models/create',
-        label: 'Cadastrar Modelo',
-      },
-      {
-        routerLink: 'cars-models/update',
-        label: 'Atualizar Mddelo',
+        label: 'Cadastrar Modelos',
       },
     ],
   },
@@ -118,10 +98,6 @@ export const navbarData: INavbarData[] = [
         routerLink: 'cars-brands/create',
         label: 'Cadastrar Marcas',
       },
-      {
-        routerLink: 'cars-brands/update',
-        label: 'Atualizar Marcas',
-      },
     ],
   },
   {
@@ -135,11 +111,7 @@ export const navbarData: INavbarData[] = [
       },
       {
         routerLink: 'users/create',
-        label: 'Cadastro',
-      },
-      {
-        routerLink: 'users/update',
-        label: 'Atualizar dados',
+        label: 'Cadastro de Usuários',
       },
     ],
   },

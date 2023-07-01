@@ -1,7 +1,6 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&display=swap');
-@import '~@angular/cdk/overlay-prebuilt.css';
 
 :root {
   --cor-branca: #fff;

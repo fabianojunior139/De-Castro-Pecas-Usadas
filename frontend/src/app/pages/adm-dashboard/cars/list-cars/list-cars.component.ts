@@ -1,3 +1,4 @@
+import { UtilService } from './../../../../services/util.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { ICar } from './../../../../models/car';
 import { CarService } from './../../../../services/car.service';
@@ -12,6 +13,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import { DialogService } from 'src/app/services/dialog.service';
 
 @Component({
   selector: 'app-list-cars',
@@ -33,9 +35,12 @@ export class ListCarsComponent implements AfterViewInit {
     this.findAllCars();
   }
 
-  @Output() edit = new EventEmitter(false);
-
-  constructor(private carService: CarService, private router: Router) {}
+  constructor(
+    private carService: CarService,
+    private router: Router,
+    private dialogService: DialogService,
+    private utilService: UtilService
+  ) {}
 
   //Lista todos os carros cadastrados
   findAllCars(): void {
@@ -55,5 +60,18 @@ export class ListCarsComponent implements AfterViewInit {
     this.router.navigate(['dashboard/cars/edit', car.id]);
   }
 
-  onDelete(car: ICar): void {}
+  onDelete(car: ICar): void {
+    this.dialogService.confirmDialog(car.name).subscribe({
+      next: (response) => {
+        if (response) {
+          this.carService.delete(car.id);
+          this.utilService.handleToast(car.name + ' excluído com sucesso.');
+          this.findAllCars();
+        }
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
 }

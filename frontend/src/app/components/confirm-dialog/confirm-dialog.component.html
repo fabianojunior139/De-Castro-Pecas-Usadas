@@ -1,0 +1,19 @@
+<div class="header">
+  <h2 mat-dialog-title class="title">Tem certeza?</h2>
+  <button mat-icon-button class="button-x" [mat-dialog-close]="false">
+    <fa-icon class="icon" [icon]="faXmark"></fa-icon>
+  </button>
+</div>
+
+<div mat-dialog-content>
+  <p>Tem certeza que deseja excluir o carro <span>{{car}}</span>? A ação não pode ser revertida.</p>
+</div>
+
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button [mat-dialog-close]="false">
+    Cancelar
+  </button>
+  <button mat-raised-button class="button-confirm" [mat-dialog-close]="true">
+    Confirmar
+  </button>
+</div>
