@@ -17,9 +17,7 @@ import { DialogService } from 'src/app/services/dialog.service';
 export class ListCarsComponent implements AfterViewInit {
   readonly displayedColumns: string[] = ['id', 'name', 'actions'];
   dataSource = new MatTableDataSource<ICar>();
-
   cars: ICar[] = [];
-
   faPenToSquare = faPenToSquare;
   faTrash = faTrash;
 

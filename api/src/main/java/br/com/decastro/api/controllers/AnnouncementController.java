@@ -1,6 +1,7 @@
 package br.com.decastro.api.controllers;
 
 import br.com.decastro.api.domain.announcement.*;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
@@ -12,6 +13,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("announcement")
+@SecurityRequirement(name = "bearer-key")
 public class AnnouncementController {
 
     private final AnnouncementRepository announcementRepository;

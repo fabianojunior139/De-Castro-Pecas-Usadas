@@ -1,0 +1,46 @@
+@import '../../../../../styles.css';
+
+.container {
+  padding: 1rem 2rem;
+  border: 1px solid var(--cor-cinza-clara3);
+}
+
+.form-content {
+  border: 1px solid red;
+}
+
+.title {
+  text-align: center;
+  font-family: var(--font-belasonima);
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.row1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.row3 {
+  display: grid;
+  grid-template-columns: 0.5fr 0.8fr 0.33fr 0.5fr;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.row4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}

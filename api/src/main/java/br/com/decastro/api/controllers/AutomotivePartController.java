@@ -1,6 +1,7 @@
 package br.com.decastro.api.controllers;
 
 import br.com.decastro.api.domain.automotivePart.*;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("automotive-part")
+@SecurityRequirement(name = "bearer-key")
 public class AutomotivePartController {
 
     private final AutomotivePartBusinessRules businessRules;

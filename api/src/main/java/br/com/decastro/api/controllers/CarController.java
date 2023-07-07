@@ -1,6 +1,7 @@
 package br.com.decastro.api.controllers;
 
 import br.com.decastro.api.domain.car.*;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/car")
+@SecurityRequirement(name = "bearer-key")
 public class CarController {
 
     //Injetando a classe CarRepository para poder persistir os dados dentro do banco

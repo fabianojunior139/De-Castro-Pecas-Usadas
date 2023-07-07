@@ -4,7 +4,8 @@
   text-align: center;
   font-weight: 700;
   margin-bottom: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  font-family: var(--font-belasonima);
 }
 
 .list-parts {
@@ -16,7 +17,7 @@
 .left-container {
   width: 20rem;
   height: calc(100vh - 12rem);
-  border: 1px solid var(--cor-cinza-clara3);
+  border: 1px solid var(--color-orange);
   padding: 1rem;
 }
 
@@ -30,6 +31,7 @@
   font-size: 1.125rem;
   margin: 0.5rem 0;
   font-weight: 700;
+  font-family: var(--font-belasonima);
 }
 
 .fixed {
@@ -48,8 +50,9 @@
   display: flex;
   width: 80%;
   margin: 0.5rem auto;
-  background-color: var(--color-blue) !important;
+  background-color: var(--color-orange) !important;
   color: var(--cor-branca) !important;
+  font-family: var(--font-belasonima);
 }
 
 .right-container {

@@ -1,11 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  NgForm,
-  Validators,
-} from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { IParts } from 'src/app/models/automotivePart';
 import { IFilter } from 'src/app/models/filter';
 import { AutomotivePart } from 'src/app/services/automotive-part.service';

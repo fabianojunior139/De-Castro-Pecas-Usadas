@@ -5,6 +5,7 @@ import br.com.decastro.api.domain.announcement.AnnouncementDataToUpdate;
 import br.com.decastro.api.domain.announcement.AnnouncementRegisterData;
 import br.com.decastro.api.domain.sale.*;
 import br.com.decastro.api.domain.user.UserDataToList;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("sale")
+@SecurityRequirement(name = "bearer-key")
 public class SaleController {
 
     private final SaleBusinessRules businessRules;
