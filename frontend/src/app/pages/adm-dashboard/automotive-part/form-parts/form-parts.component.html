@@ -1,0 +1,163 @@
+<div class="container">
+
+  <ng-container *ngIf="
+        isEdit
+        then edit;
+        else create
+      "></ng-container>
+
+  <ng-template #create>
+    <h1 class="title">Cadastro de Peças</h1>
+
+    <form class="user-form" [formGroup]="partForm">
+
+      <div class="row1">
+        <mat-form-field>
+          <mat-label>Peça</mat-label>
+          <input matInput placeholder="Ex: Radiador" formControlName="name" required>
+          <mat-error>A nome da peça deve ter pelo menos 2 caracteres</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Quantidade em Estoque</mat-label>
+          <input matInput type="number" placeholder="Ex: 10" formControlName="stock_quantity" required>
+          <mat-error>Quantidade inválida</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Ano</mat-label>
+          <mat-select formControlName="year">
+            <mat-option value="">Selecione</mat-option>
+            <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+          </mat-select>
+          <mat-error>Campo obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Preço Médio</mat-label>
+          <input matInput type="number" placeholder="Ex: 300,00" formControlName="average_price" required />
+          <mat-error>Valor inválido</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="row2">
+        <mat-form-field>
+          <textarea matInput rows="5" formControlName="description"
+            placeholder="Ex: Serve também para os anos 2011 e 2012"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="row3">
+        <mat-form-field>
+          <mat-label>Categoria</mat-label>
+          <mat-select formControlName="category">
+            <mat-option value="">Selecione</mat-option>
+            <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+          </mat-select>
+          <mat-error>Campo obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Carro</mat-label>
+          <mat-select formControlName="car_id">
+            <mat-option value="">Selecione</mat-option>
+            <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+          </mat-select>
+          <mat-error>Campo obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Marca</mat-label>
+          <mat-select formControlName="car_brand_id">
+            <mat-option value="">Selecione</mat-option>
+            <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+          </mat-select>
+          <mat-error>Campo obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Modelo</mat-label>
+          <mat-select formControlName="car_model_id">
+            <mat-option value="">Selecione</mat-option>
+            <mat-option *ngFor="let year of years" [value]="year">{{ year }}</mat-option>
+          </mat-select>
+          <mat-error>Campo obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+
+      <button mat-raised-button class="form-button">Cadastrar</button>
+    </form>
+  </ng-template>
+
+  <ng-template #edit>
+    <h1 class="title">Edição de funcionários</h1>
+
+    <!-- <form class="user-form" [formGroup]="partForm">
+
+      <div class="row1">
+        <mat-form-field>
+          <mat-label>Nome</mat-label>
+          <input matInput placeholder="Ex: Fabiano" formControlName="name" required>
+          <mat-error>O nome deve ter pelo menos 2 caracteres</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>E-mail</mat-label>
+          <input matInput formControlName="email">
+          <mat-error>E-mail inválido, tente novamente</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="row3">
+        <mat-form-field>
+          <mat-label>CEP</mat-label>
+          <input matInput placeholder="Ex: 01000-000" formControlName="cep" required>
+          <mat-error>CEP inválido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Endereço</mat-label>
+          <input matInput placeholder="Ex: Rua Faria Lima" formControlName="address" required>
+          <mat-error>Endereço inválido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Número</mat-label>
+          <input type="number" matInput placeholder="Ex: 100" formControlName="number" required>
+          <mat-error>Número inválido</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Complemento</mat-label>
+          <input matInput placeholder="Ex: Casa" formControlName="complement" required>
+          <mat-error>Complemento inválido</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="row4">
+        <mat-form-field>
+          <mat-label>Bairro</mat-label>
+          <input matInput placeholder="Ex: Liberdade" formControlName="neighborhood" required>
+          <mat-error>O bairro deve ter pelo menos 2 caracteres</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Cidade</mat-label>
+          <input matInput placeholder="Ex: São Paulo" formControlName="city" required>
+          <mat-error>A cidade deve ter pelo menos 2 caracteres</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>UF</mat-label>
+          <mat-select formControlName="uf">
+            <mat-option value="">Selecione</mat-option>
+            <mat-option></mat-option>
+          </mat-select>
+          <mat-error>Campo obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+
+      <button mat-raised-button class="form-button">Editar</button>
+    </form> -->
+  </ng-template>
+</div>

@@ -6,8 +6,6 @@ import { AuthGuard } from './guard/auth.guard';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { AdmDashboardComponent } from './pages/adm-dashboard/adm-dashboard.component';
 import { ListPartsComponent } from './pages/adm-dashboard/automotive-part/list-parts/list-parts.component';
-import { RegisterPartsComponent } from './pages/adm-dashboard/automotive-part/register-parts/register-parts.component';
-import { UpdatePartsComponent } from './pages/adm-dashboard/automotive-part/update-parts/update-parts.component';
 import { ListSalesComponent } from './pages/adm-dashboard/sales/list-sales/list-sales.component';
 import { CreateSalesComponent } from './pages/adm-dashboard/sales/create-sales/create-sales.component';
 import { UpdateSalesComponent } from './pages/adm-dashboard/sales/update-sales/update-sales.component';
@@ -22,6 +20,7 @@ import { FormCarsComponent } from './pages/adm-dashboard/cars/form-cars/form-car
 import { FormUsersComponent } from './pages/adm-dashboard/users/form-users/form-users.component';
 import { FormCarModelsComponent } from './pages/adm-dashboard/car-models/form-car-models/form-car-models.component';
 import { FormCarBrandsComponent } from './pages/adm-dashboard/car-brands/form-car-brands/form-car-brands.component';
+import { FormPartsComponent } from './pages/adm-dashboard/automotive-part/form-parts/form-parts.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -34,8 +33,8 @@ const routes: Routes = [
     children: [
       //peças automotivas = estoque
       { path: 'stock/list', component: ListPartsComponent },
-      { path: 'stock/create', component: RegisterPartsComponent },
-      { path: 'stock/update', component: UpdatePartsComponent },
+      { path: 'stock/create', component: FormPartsComponent },
+      { path: 'stock/edit/:id', component: FormPartsComponent },
       //vendas
       { path: 'sales/list', component: ListSalesComponent },
       { path: 'sales/create', component: CreateSalesComponent },

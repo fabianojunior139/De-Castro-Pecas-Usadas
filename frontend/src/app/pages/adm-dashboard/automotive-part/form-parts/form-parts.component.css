@@ -1,0 +1,54 @@
+@import "../../../../../styles.css";
+
+.container {
+  padding: 1rem 2rem;
+  border: 1px solid var(--cor-cinza-clara3);
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  font-family: var(--font-belasonima);
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.row1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.75fr 0.75fr;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.row2 {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.row3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.row4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.form-button {
+  width: 50%;
+  margin: 0 auto;
+  background-color: var(--color-orange) !important;
+  color: var(--cor-branca) !important;
+}
+

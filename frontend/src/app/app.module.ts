@@ -21,8 +21,6 @@ import { ListAnnouncementsComponent } from './pages/adm-dashboard/announcements/
 import { RegisterAnnouncementsComponent } from './pages/adm-dashboard/announcements/register-announcements/register-announcements.component';
 import { UpdateAnnouncementComponent } from './pages/adm-dashboard/announcements/update-announcement/update-announcement.component';
 import { ListPartsComponent } from './pages/adm-dashboard/automotive-part/list-parts/list-parts.component';
-import { RegisterPartsComponent } from './pages/adm-dashboard/automotive-part/register-parts/register-parts.component';
-import { UpdatePartsComponent } from './pages/adm-dashboard/automotive-part/update-parts/update-parts.component';
 import { ListCarBrandsComponent } from './pages/adm-dashboard/car-brands/list-car-brands/list-car-brands.component';
 import { ListCarModelsComponent } from './pages/adm-dashboard/car-models/list-car-models/list-car-models.component';
 import { ListCarsComponent } from './pages/adm-dashboard/cars/list-cars/list-cars.component';
@@ -39,6 +37,7 @@ import { FormUsersComponent } from './pages/adm-dashboard/users/form-users/form-
 import { FormCarModelsComponent } from './pages/adm-dashboard/car-models/form-car-models/form-car-models.component';
 import { FormCarBrandsComponent } from './pages/adm-dashboard/car-brands/form-car-brands/form-car-brands.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { FormPartsComponent } from './pages/adm-dashboard/automotive-part/form-parts/form-parts.component';
 
 @NgModule({
   declarations: [
@@ -56,8 +55,6 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     RegisterAnnouncementsComponent,
     UpdateAnnouncementComponent,
     ListPartsComponent,
-    RegisterPartsComponent,
-    UpdatePartsComponent,
     ListCarBrandsComponent,
     ListCarModelsComponent,
     ListCarsComponent,
@@ -73,6 +70,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     FormCarModelsComponent,
     FormCarBrandsComponent,
     ConfirmDialogComponent,
+    FormPartsComponent,
   ],
   imports: [
     BrowserModule,
