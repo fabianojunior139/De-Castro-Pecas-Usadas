@@ -1,12 +1,13 @@
-@import '../../../../../styles.css';
+@import "../../../../../styles.css";
 
 .container {
   padding: 1rem 2rem;
   border: 1px solid var(--cor-cinza-clara3);
 }
 
-.form-content {
-  border: 1px solid red;
+.user-form {
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -44,3 +45,11 @@
   gap: 1rem;
   margin-bottom: 0.75rem;
 }
+
+.form-button {
+  width: 50%;
+  margin: 0 auto;
+  background-color: var(--color-orange) !important;
+  color: var(--cor-branca) !important;
+}
+

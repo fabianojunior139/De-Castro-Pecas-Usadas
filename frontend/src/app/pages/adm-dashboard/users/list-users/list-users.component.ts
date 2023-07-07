@@ -36,10 +36,6 @@ export class ListUsersComponent {
     this.findAllUsers();
   }
 
-  ngOnInit(): void {
-    this.findAllUsers();
-  }
-
   constructor(
     private userService: UserService,
     private router: Router,
@@ -54,7 +50,6 @@ export class ListUsersComponent {
         this.users = responseAPI.content;
         this.dataSource = new MatTableDataSource<IUser>(this.users);
         this.dataSource.paginator = this.paginator;
-        console.log(this.dataSource);
       },
       error: (error) => {
         console.log(error);

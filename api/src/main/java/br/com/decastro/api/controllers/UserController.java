@@ -5,6 +5,7 @@ import br.com.decastro.api.domain.user.UserRegisterData;
 import br.com.decastro.api.domain.user.UserUpdateData;
 import br.com.decastro.api.domain.user.User;
 import br.com.decastro.api.domain.user.UserRepository;
+import br.com.decastro.api.infra.authentication.PasswordEncoder;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -24,9 +25,11 @@ public class UserController {
 
     //Injetando a classe UserRepository para poder persistir as informações do usuário dentro do banco de dados
     private final UserRepository repository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserController(UserRepository repository) {
+    public UserController(UserRepository repository, PasswordEncoder passwordEncoder) {
         this.repository = repository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     //Listando todos os usuários cadastrados na base de dados
@@ -48,6 +51,7 @@ public class UserController {
     @Transactional
     public ResponseEntity register(@RequestBody @Valid UserRegisterData data, UriComponentsBuilder uriBuilder) {
         var user = new User(data);
+        user.setPassword(passwordEncoder.encodePassword(data.password()));
         if (!repository.existsByEmail(user.getEmail())) {
             repository.save(user);
             var uri = uriBuilder.path("/user/{id}").buildAndExpand(user.getId()).toUri();

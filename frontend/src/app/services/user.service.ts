@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Method } from '../models/api';
 import { UtilService } from './util.service';
-import { IUser } from './../models/user';
+import { IUser, IUserToRegister, IUserToUpdate } from './../models/user';
 import { ResponseAPI } from './../models/api';
 
 @Injectable({
@@ -29,20 +29,20 @@ export class UserService {
   }
 
   //Salvado e editando usuários
-  saveUser(user: IUser, method: Method): void {
-    let res;
+  saveUser(user: IUserToRegister | IUserToUpdate, method: Method): void {
+    let res: Observable<any>;
 
     switch (method) {
       case 'post':
-        res = this.httpClient.post<IUser>(this.baseUrl, user);
+        res = this.httpClient.post<IUserToRegister>(this.baseUrl, user);
         break;
       case 'put':
-        res = this.httpClient.put<IUser>(this.baseUrl, user);
+        res = this.httpClient.put<IUserToUpdate>(this.baseUrl, user);
         break;
     }
 
     res.subscribe({
-      next: (APIresponse: IUser) => {
+      next: (APIresponse) => {
         this.utilService.handleToast(
           'O usuário ' + APIresponse.name + ' foi salvo com sucesso'
         );
@@ -53,19 +53,18 @@ export class UserService {
     });
   }
 
-    //Deletando um usuário
-    delete(id: number): void {
-      const url = this.baseUrl + '/' + id;
-      this.httpClient.delete(url).subscribe({
-        next: () => {
-          this.list();
-        },
-        error: () => {
-          this.utilService.handleToast(
-            'Houve um erro inesperado, tente novamente'
-          );
-        },
-      });
-    }
-
+  //Deletando um usuário
+  delete(id: number): void {
+    const url = this.baseUrl + '/' + id;
+    this.httpClient.delete(url).subscribe({
+      next: () => {
+        this.list();
+      },
+      error: () => {
+        this.utilService.handleToast(
+          'Houve um erro inesperado, tente novamente'
+        );
+      },
+    });
+  }
 }
