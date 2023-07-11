@@ -30,7 +30,6 @@ public class AutomotivePart {
     private Double averagePrice;
     @Column(nullable = false)
     private Integer year;
-    @Column(nullable = false)
     private String observation;
 
     @Enumerated(EnumType.STRING)

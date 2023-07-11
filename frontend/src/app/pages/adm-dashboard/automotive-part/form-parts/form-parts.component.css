@@ -20,23 +20,25 @@
 
 .row1 {
   display: grid;
-  grid-template-columns: 1fr 1fr 0.75fr 0.75fr;
+  grid-template-columns: 1fr 0.75fr 0.75fr 0.75fr;
   gap: 1rem;
   margin-bottom: 0.75rem;
 }
 
 .row2 {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
   margin-bottom: 0.75rem;
 }
 
 .row3 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
   margin-bottom: 0.75rem;
 }
+
+
 
 .row4 {
   display: grid;

@@ -21,6 +21,7 @@ import { FormUsersComponent } from './pages/adm-dashboard/users/form-users/form-
 import { FormCarModelsComponent } from './pages/adm-dashboard/car-models/form-car-models/form-car-models.component';
 import { FormCarBrandsComponent } from './pages/adm-dashboard/car-brands/form-car-brands/form-car-brands.component';
 import { FormPartsComponent } from './pages/adm-dashboard/automotive-part/form-parts/form-parts.component';
+import { PartInformationsComponent } from './pages/adm-dashboard/automotive-part/part-informations/part-informations.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -34,6 +35,7 @@ const routes: Routes = [
       //peças automotivas = estoque
       { path: 'stock/list', component: ListPartsComponent },
       { path: 'stock/create', component: FormPartsComponent },
+      { path: 'stock/informations/:id', component: PartInformationsComponent },
       { path: 'stock/edit/:id', component: FormPartsComponent },
       //vendas
       { path: 'sales/list', component: ListSalesComponent },

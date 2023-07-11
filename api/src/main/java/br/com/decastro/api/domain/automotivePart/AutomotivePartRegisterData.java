@@ -13,7 +13,6 @@ public record AutomotivePartRegisterData(
         Double average_price,
         @NotNull
         Integer year,
-        @NotNull
         String observation,
         @NotNull @Valid
         PartCategory category,

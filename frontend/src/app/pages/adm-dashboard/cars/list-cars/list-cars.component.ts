@@ -52,7 +52,7 @@ export class ListCarsComponent implements AfterViewInit {
     });
   }
 
-  ////Editando carros pela tabela
+  //Editando carros pela tabela
   onEdit(car: ICar): void {
     this.router.navigate(['dashboard/cars/edit', car.id]);
   }

@@ -55,27 +55,26 @@ public class AutomotivePartBusinessRules {
     }
 
     public AutomotivePartDataToList update(AutomotivePartDataToUpdate data) {
-
         if (!automotivePartRepository.existsById(data.id())) {
             throw new ValidationException("Invalid part");
         }
 
-        if (!carRepository.existsById(data.car())) {
+        if (!carRepository.existsById(data.car_id())) {
             throw new ValidationException("Invalid car");
         }
 
-        if (!carModelRepository.existsById(data.car_model())) {
+        if (!carModelRepository.existsById(data.car_model_id())) {
             throw new ValidationException("Invalid car model");
         }
 
-        if (!carBrandRepository.existsById(data.car_brand())) {
+        if (!carBrandRepository.existsById(data.car_brand_id())) {
             throw new ValidationException("Invalid car brand");
         }
 
         var automotivePart = automotivePartRepository.getReferenceById(data.id());
-        var car = carRepository.getReferenceById(data.car());
-        var car_brand = carBrandRepository.getReferenceById(data.car_brand());
-        var car_model = carModelRepository.getReferenceById(data.car_model());
+        var car = carRepository.getReferenceById(data.car_id());
+        var car_brand = carBrandRepository.getReferenceById(data.car_brand_id());
+        var car_model = carModelRepository.getReferenceById(data.car_model_id());
 
         var automotivePartToUpdate = new AutomotivePart(automotivePart.getId(), data.name(), data.stock_quantity(), data.average_price(),
                 data.year(), data.observation(), data.category(), car, car_brand, car_model, automotivePart.getUser());

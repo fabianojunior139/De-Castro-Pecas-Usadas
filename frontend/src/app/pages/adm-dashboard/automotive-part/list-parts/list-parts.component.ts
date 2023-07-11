@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IParts } from 'src/app/models/automotivePart';
 import { IFilter } from 'src/app/models/filter';
 import { AutomotivePart } from 'src/app/services/automotive-part.service';
@@ -34,7 +35,7 @@ export class ListPartsComponent implements OnInit {
     year: 0,
   };
 
-  constructor(private automotivePart: AutomotivePart) {
+  constructor(private automotivePart: AutomotivePart, private router: Router) {
     //inicializando a variável year com os últimos 50 anos partindo da data atual
     const anoAtual = new Date().getFullYear();
     this.years = Array.from({ length: 50 }, (v, i) => anoAtual - i);
@@ -125,5 +126,10 @@ export class ListPartsComponent implements OnInit {
   //Ao iniciar o componente chamada uma chamada à API de todos os registros cadastrados na base de dados
   ngOnInit() {
     this.getAllAutomotiveParts();
+  }
+
+  getPartClicked(part: IParts): void {
+    const url = 'dashboard/stock/informations/' + part.id;
+    this.router.navigate([url]);
   }
 }

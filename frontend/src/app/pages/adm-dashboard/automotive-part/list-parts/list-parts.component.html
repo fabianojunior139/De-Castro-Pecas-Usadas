@@ -1,4 +1,4 @@
-<h1 class="title">PEÇAS CADASTRADAS</h1>
+<h1 class="title">Peças Cadastradas</h1>
 <div class="list-parts">
   <div class="left-container" [ngClass]="{'fixed': isFixed}">
     <h3 class="filter-title">FILTROS</h3>
@@ -38,7 +38,7 @@
   <ng-template #listParts>
     <div class="right-container" [ngStyle]="{ 'margin-left': isFixed ? '21rem' : '0' }">
       <div *ngFor="let part of filteredParts">
-        <app-parts-card [automotivePartList]="part"></app-parts-card>
+        <app-parts-card [automotivePartList]="part" (click)="getPartClicked(part)"></app-parts-card>
       </div>
     </div>
   </ng-template>
@@ -51,6 +51,5 @@
       </div>
     </div>
   </ng-template>
-
 
 </div>

@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="header">
+    <h1 class="title">Informações da Peça</h1>
+    <button class="edit-button" (click)="toEdit()">Editar</button>
+    <button class="return-button" (click)="toPartList()">Voltar</button>
+  </div>
+  <div class="content">
+    <div class="left-container">
+      <p class="part-name">Nome da peça: <span>{{ part?.name }}</span></p>
+      <p class="part-name">Carro: <span>{{ part?.car }}</span></p>
+      <p class="part-name">Marca: <span>{{ part?.car_brand }}</span></p>
+      <p class="part-name">Modelo: <span>{{ part?.car_model }}</span></p>
+      <p class="part-name">Ano: <span>{{ part?.year }}</span></p>
+      <p class="part-name">Usuário que cadastrou: <span>{{ part?.user }}</span></p>
+    </div>
+    <div class="right-container">
+      <div class="card-quantity card">
+        <p class="card-text">Quantidade em Estoque</p>
+        <p class="card-number">{{ part?.stock_quantity }}</p>
+      </div>
+      <div class="card-price card">
+        <p class="card-text">Preço Médio</p>
+        <p class="card-number">R$ {{ part?.average_price }}</p>
+      </div>
+    </div>
+  </div>
+</div>

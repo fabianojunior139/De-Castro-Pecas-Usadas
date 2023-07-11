@@ -12,18 +12,17 @@ public record AutomotivePartDataToUpdate(
         Long stock_quantity,
         @NotNull
         Double average_price,
-        @NotNull
         String observation,
         @NotNull
         Integer year,
         @NotNull @Valid
         PartCategory category,
         @NotNull @Valid
-        Long car,
+        Long car_id,
         @NotNull @Valid
-        Long car_brand,
+        Long car_brand_id,
         @NotNull @Valid
-        Long car_model
+        Long car_model_id
 ) {
 
 }

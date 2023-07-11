@@ -37,19 +37,26 @@ public class AutomotivePartController {
         return ResponseEntity.ok(new AutomotivePartDataToList(automotivePart));
     }
 
+    //Listando uma peça específica da base de dados para edição no front-end
+    @GetMapping("/edit/{id}")
+    public ResponseEntity listAutomotivePartByIdToEdit(@PathVariable Long id) {
+        var automotivePart = automotivePartRepository.getReferenceById(id);
+        return ResponseEntity.ok(new AutomotivePartDataToListToEdit(automotivePart));
+    }
+
     //Cadastrando uma nova peça no banco de dados
     @PostMapping
     @Transactional
     public ResponseEntity registerNewAutomotivePart(@RequestBody @Valid AutomotivePartRegisterData data) {
-        var dto = businessRules.register(data);
-        return ResponseEntity.ok(dto);
+        var part = businessRules.register(data);
+        return ResponseEntity.ok(part);
     }
 
     //Editando uma peça de carro
     @PutMapping
     @Transactional
     public ResponseEntity updateAutomotivePart(@RequestBody @Valid AutomotivePartDataToUpdate data) {
-        var dto = businessRules.update(data);
-        return ResponseEntity.ok(dto);
+        var part = businessRules.update(data);
+        return ResponseEntity.ok(part);
     }
 }
