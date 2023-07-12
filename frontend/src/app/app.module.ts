@@ -18,8 +18,6 @@ import { SublevelMenuComponent } from './components/sidenav/sublevel-menu.compon
 import { materialModules } from './material-modules';
 import { AdmDashboardComponent } from './pages/adm-dashboard/adm-dashboard.component';
 import { ListAnnouncementsComponent } from './pages/adm-dashboard/announcements/list-announcements/list-announcements.component';
-import { RegisterAnnouncementsComponent } from './pages/adm-dashboard/announcements/register-announcements/register-announcements.component';
-import { UpdateAnnouncementComponent } from './pages/adm-dashboard/announcements/update-announcement/update-announcement.component';
 import { ListPartsComponent } from './pages/adm-dashboard/automotive-part/list-parts/list-parts.component';
 import { ListCarBrandsComponent } from './pages/adm-dashboard/car-brands/list-car-brands/list-car-brands.component';
 import { ListCarModelsComponent } from './pages/adm-dashboard/car-models/list-car-models/list-car-models.component';
@@ -39,6 +37,7 @@ import { FormCarBrandsComponent } from './pages/adm-dashboard/car-brands/form-ca
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { FormPartsComponent } from './pages/adm-dashboard/automotive-part/form-parts/form-parts.component';
 import { PartInformationsComponent } from './pages/adm-dashboard/automotive-part/part-informations/part-informations.component';
+import { FormAnnouncementsComponent } from './pages/adm-dashboard/announcements/form-announcements/form-announcements.component';
 
 @NgModule({
   declarations: [
@@ -53,8 +52,6 @@ import { PartInformationsComponent } from './pages/adm-dashboard/automotive-part
     BodyComponent,
     SublevelMenuComponent,
     ListAnnouncementsComponent,
-    RegisterAnnouncementsComponent,
-    UpdateAnnouncementComponent,
     ListPartsComponent,
     ListCarBrandsComponent,
     ListCarModelsComponent,
@@ -73,6 +70,7 @@ import { PartInformationsComponent } from './pages/adm-dashboard/automotive-part
     ConfirmDialogComponent,
     FormPartsComponent,
     PartInformationsComponent,
+    FormAnnouncementsComponent,
   ],
   imports: [
     BrowserModule,

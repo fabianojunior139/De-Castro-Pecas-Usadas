@@ -29,10 +29,10 @@ public record AnnouncementDataToUpdate(
         @NotNull
         Boolean eletricGlass,
         @NotNull @Valid
-        Long car,
+        Long car_id,
         @NotNull @Valid
-        Long car_model,
+        Long car_model_id,
         @NotNull @Valid
-        Long car_brand
+        Long car_brand_id
 ) {
 }

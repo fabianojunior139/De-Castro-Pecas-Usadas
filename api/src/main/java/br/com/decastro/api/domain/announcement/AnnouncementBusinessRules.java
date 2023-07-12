@@ -60,22 +60,22 @@ public class AnnouncementBusinessRules {
             throw new ValidationException("Invalid part");
         }
 
-        if (!carRepository.existsById(data.car())) {
+        if (!carRepository.existsById(data.car_id())) {
             throw new ValidationException("Invalid car");
         }
 
-        if (!carModelRepository.existsById(data.car_model())) {
+        if (!carModelRepository.existsById(data.car_model_id())) {
             throw new ValidationException("Invalid car model");
         }
 
-        if (!carBrandRepository.existsById(data.car_brand())) {
+        if (!carBrandRepository.existsById(data.car_brand_id())) {
             throw new ValidationException("Invalid car brand");
         }
 
         var announcement = announcementRepository.getReferenceById(data.id());
-        var car = carRepository.getReferenceById(data.car());
-        var car_brand = carBrandRepository.getReferenceById(data.car_brand());
-        var car_model = carModelRepository.getReferenceById(data.car_model());
+        var car = carRepository.getReferenceById(data.car_id());
+        var car_brand = carBrandRepository.getReferenceById(data.car_brand_id());
+        var car_model = carModelRepository.getReferenceById(data.car_model_id());
 
         var announcementToUpdate = new Announcement(announcement.getId(), announcement.getPublicationData(), data.description(),
                 data.year(), data.mileage(), data.motorPower(), data.fuelType(), data.color(), data.exchange(), data.numberDoors(),

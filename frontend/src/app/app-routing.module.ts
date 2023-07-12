@@ -10,8 +10,6 @@ import { ListSalesComponent } from './pages/adm-dashboard/sales/list-sales/list-
 import { CreateSalesComponent } from './pages/adm-dashboard/sales/create-sales/create-sales.component';
 import { UpdateSalesComponent } from './pages/adm-dashboard/sales/update-sales/update-sales.component';
 import { ListAnnouncementsComponent } from './pages/adm-dashboard/announcements/list-announcements/list-announcements.component';
-import { RegisterAnnouncementsComponent } from './pages/adm-dashboard/announcements/register-announcements/register-announcements.component';
-import { UpdateAnnouncementComponent } from './pages/adm-dashboard/announcements/update-announcement/update-announcement.component';
 import { ListCarsComponent } from './pages/adm-dashboard/cars/list-cars/list-cars.component';
 import { ListCarModelsComponent } from './pages/adm-dashboard/car-models/list-car-models/list-car-models.component';
 import { ListCarBrandsComponent } from './pages/adm-dashboard/car-brands/list-car-brands/list-car-brands.component';
@@ -22,6 +20,7 @@ import { FormCarModelsComponent } from './pages/adm-dashboard/car-models/form-ca
 import { FormCarBrandsComponent } from './pages/adm-dashboard/car-brands/form-car-brands/form-car-brands.component';
 import { FormPartsComponent } from './pages/adm-dashboard/automotive-part/form-parts/form-parts.component';
 import { PartInformationsComponent } from './pages/adm-dashboard/automotive-part/part-informations/part-informations.component';
+import { FormAnnouncementsComponent } from './pages/adm-dashboard/announcements/form-announcements/form-announcements.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -43,11 +42,8 @@ const routes: Routes = [
       { path: 'sales/update', component: UpdateSalesComponent },
       //Anúncios
       { path: 'announcements/list', component: ListAnnouncementsComponent },
-      {
-        path: 'announcements/create',
-        component: RegisterAnnouncementsComponent,
-      },
-      { path: 'announcements/update', component: UpdateAnnouncementComponent },
+      { path: 'announcements/create', component: FormAnnouncementsComponent },
+      { path: 'announcements/edit/:id', component: FormAnnouncementsComponent },
       //Carros
       { path: 'cars/list', component: ListCarsComponent },
       { path: 'cars/create', component: FormCarsComponent },

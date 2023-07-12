@@ -1,7 +1,7 @@
 import { UtilService } from './../../../../services/util.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { IUser } from './../../../../models/user';
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
