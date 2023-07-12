@@ -1,0 +1,62 @@
+@import '../../../styles.css';
+
+.card-announcement {
+  width: 24rem;
+  height: 38rem;
+  border: 1px solid var(--color-blue);
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  width: 100%;
+  height: 67%;
+}
+
+.img {
+  height: 100%;
+  width: 100%;
+}
+
+.titulo {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+
+fa-icon {
+  color: var(--cor-cinza-clara);
+}
+
+.text-card {
+  margin-left: 0.5rem;
+  color: var(--cor-cinza-clara);
+}
+
+.icons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.more-info {
+  align-self: center;
+  text-decoration: none;
+  padding: 0.5rem;
+  background-color: var(--color-orange);
+  color: var(--cor-branca);
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.more-info:hover {
+  opacity: 0.9;
+}
