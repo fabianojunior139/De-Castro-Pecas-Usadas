@@ -14,3 +14,45 @@ body {
 .img-brightness {
   filter: brightness(0.2);
 }
+
+.cards {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid red;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.announcements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion {
+  border: 1px solid red;
+  padding: 3rem;
+  text-align: center;
+}
+
+.localization-map {
+  display: flex;
+  justify-content: center;
+  height: 30rem;
+  padding: 3rem;
+}
+
+.map-text {
+  width: 50%;
+}
+
+.map {
+  width: 50%;
+}
