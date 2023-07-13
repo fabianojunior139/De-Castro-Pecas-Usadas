@@ -36,6 +36,8 @@ import { FormCarModelsComponent } from './pages/adm-dashboard/car-models/form-ca
 import { FormCarBrandsComponent } from './pages/adm-dashboard/car-brands/form-car-brands/form-car-brands.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { FormPartsComponent } from './pages/adm-dashboard/automotive-part/form-parts/form-parts.component';
+import { AccordionComponent } from './components/accordion/accordion.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { FormPartsComponent } from './pages/adm-dashboard/automotive-part/form-p
     FormCarBrandsComponent,
     ConfirmDialogComponent,
     FormPartsComponent,
+    AccordionComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
