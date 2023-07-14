@@ -11,15 +11,13 @@
   --cor-cinza-clara3: #e5e5e5;
   --cor-cinza-clara4: #f3f3f3;
 
-  --cor-primary: #3f51b5;
-  --cor-primary-variance: #5e6fce;
-
   --color-blue: #205375;
   --color-dark-blue: #112B3C;
   --color-orange: #F66B0E;
   --color-gray: #EFEFEF;
 
   --font-belasonima: 'Belanosima', sans-serif;
+  --font-montserrat: 'Montserrat', sans-serif;
 }
 
 * {

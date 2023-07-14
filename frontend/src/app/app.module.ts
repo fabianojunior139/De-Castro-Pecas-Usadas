@@ -38,6 +38,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
 import { FormPartsComponent } from './pages/adm-dashboard/automotive-part/form-parts/form-parts.component';
 import { AccordionComponent } from './components/accordion/accordion.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CardAnnouncementsComponent } from './components/card-announcements/card-announcements.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { FooterComponent } from './components/footer/footer.component';
     FormPartsComponent,
     AccordionComponent,
     FooterComponent,
+    CardAnnouncementsComponent,
   ],
   imports: [
     BrowserModule,

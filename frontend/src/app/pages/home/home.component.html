@@ -1,29 +1,64 @@
 <body>
   <app-navbar></app-navbar>
-  <div class="image img-brightness"></div>
+  <div class="main">
+    <div class="main-content container">
+
+      <div class="main-text">
+        <p class="main-title">Encontre as melhores peças usadas para seu veículo com qualidade garantida e preços
+          competitivos</p>
+        <a class="main-button" href="/home#anuncios">Confira</a>
+      </div>
+
+      <div class="main-img">
+        <img class="main-image" src="../../../assets/images/main-image.svg" alt="">
+      </div>
+    </div>
+  </div>
+
   <main class="container">
     <div class="cards">
-      <h2 class="title">Confira as últimas novidades</h2>
-      <section class="announcements">
+      <h2 class="news-title">Confira as últimas novidades</h2>
+      <section class="last-announcements">
         <app-card></app-card>
         <app-card></app-card>
         <app-card></app-card>
       </section>
     </div>
+    <h2 class="announcements-title">Confira todos os anúncios disponíveis</h2>
+    <section class="announcements">
+      <div class="left-container"></div>
+      <div class="right-container">
+        <app-card-announcements></app-card-announcements>
+        <app-card-announcements></app-card-announcements>
+        <app-card-announcements></app-card-announcements>
+        <app-card-announcements></app-card-announcements>
+        <app-card-announcements></app-card-announcements>
+        <app-card-announcements></app-card-announcements>
+        <app-card-announcements></app-card-announcements>
+      </div>
+    </section>
+
     <section class="accordion">
-      <h2>Principais Dúvidas</h2>
+      <h2 class="doubts">Principais dúvidas</h2>
       <app-accordion></app-accordion>
     </section>
+
     <section class="localization-map">
-      <h2>Localização</h2>
-      <div class="map-text">
-        <p>Horário de funcionamento: De Seg a Sex</p>
-      </div>
-      <div class="map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15356.165880676956!2d-48.1299138!3d-15.8017672!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bcc781f8f1e49%3A0x8fb4a2c275e0591!2sDe%20Castro%20Pe%C3%A7as%20Usadas%20Em%20Geral!5e0!3m2!1spt-BR!2sbr!4v1689185425988!5m2!1spt-BR!2sbr"
-          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <h2 class="title-localization">Localização</h2>
+      <div class="map-content">
+        <div class="map-text">
+          <p class="title-map">Horário de funcionamento</p>
+          <p>De segunda-feira a sexta-feira, das <span>8h até às 18h</span></p>
+          <hr>
+          <p class="title-map">Formas de pagamento</p>
+          <p>Aceitamos dinheiro, pix e cartões de crédito e débito</p>
+        </div>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15356.165880676956!2d-48.1299138!3d-15.8017672!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935bcc781f8f1e49%3A0x8fb4a2c275e0591!2sDe%20Castro%20Pe%C3%A7as%20Usadas%20Em%20Geral!5e0!3m2!1spt-BR!2sbr!4v1689185425988!5m2!1spt-BR!2sbr"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
     </section>
   </main>

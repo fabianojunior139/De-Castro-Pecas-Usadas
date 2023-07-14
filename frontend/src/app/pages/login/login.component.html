@@ -19,7 +19,8 @@
 
         <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
           <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="E-mail" formControlName="email" required>
+            <input type="email" class="form-control" id="floatingInput" placeholder="E-mail" formControlName="email"
+              required>
             <label for="floatingInput" class="mx-2">E-mail</label>
           </div>
           <div class="form-floating">
@@ -41,9 +42,13 @@
             <button type="submit" class="btn btn-lg btn-primary w-100 fs-6">Entrar</button>
           </div>
           <div class="input-group mb-3">
-            <button class="btn btn-lg border btn-light w-100 fs-6" routerLink=""><img
-                src="../../../assets/images/google.png" style="width:20px" class="me-2"><small>Entre com o
-                Google</small></button>
+            <button class="btn btn-lg border btn-light w-100 fs-6" routerLink="">
+              <img src="../../../assets/images/google.png" style="width:20px" class="me-2">
+              <small>Entre com o Google</small>
+            </button>
+            <div class="d-flex justify-content-center mt-4 w-100 cursor-pointer">
+              <a (click)="redirect()" class="align-self-center fs-6 cursor-pointer">Não possuo conta</a>
+            </div>
           </div>
         </form>
       </div>

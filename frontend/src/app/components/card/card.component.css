@@ -3,7 +3,7 @@
 .card-announcement {
   width: 24rem;
   height: 38rem;
-  border: 1px solid var(--color-blue);
+  border: 1px solid var(--color-gray);
   margin: 0 1rem;
   display: flex;
   flex-direction: column;

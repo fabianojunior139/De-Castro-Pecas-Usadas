@@ -1,15 +1,15 @@
 @import "../../../styles.css";
 
 mat-toolbar {
-  background-color: var(--cor-preta);
-  opacity: 0.8;
+  background-color: var(--color-dark-blue);
   color: var(--cor-branca);
   position: fixed;
   z-index: 1000;
+  backdrop-filter: blur(25px);
 }
 
 mat-toolbar button:hover {
-  background-color: var(--cor-cinza-escuro);
+  background-color: var(--color-blue);
 }
 
 .logo {

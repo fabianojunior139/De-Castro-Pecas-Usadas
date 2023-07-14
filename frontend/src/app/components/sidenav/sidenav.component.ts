@@ -1,4 +1,3 @@
-import { UtilService } from './../../services/util.service';
 import { AuthService } from 'src/app/services/auth.service';
 import {
   Component,
@@ -19,6 +18,7 @@ import {
 import { INavbarData, SideNavToggle } from 'src/app/models/sidenav';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidenav',
@@ -61,7 +61,7 @@ export class SidenavComponent implements OnInit {
   faChevronRight = faChevronRight;
   faChevronDown = faChevronDown;
 
-  constructor(public authService: AuthService){}
+  constructor(public authService: AuthService) {}
 
   logout = this.authService.logout;
 

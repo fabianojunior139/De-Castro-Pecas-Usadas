@@ -7,7 +7,7 @@ import { faCaravan } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { INavbarData } from 'src/app/models/sidenav';
-
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 
 export const navbarData: INavbarData[] = [
   {
@@ -114,6 +114,11 @@ export const navbarData: INavbarData[] = [
         label: 'Cadastro de Usuários',
       },
     ],
+  },
+  {
+    routerLink: '/',
+    icon: faHome,
+    label: 'Home',
   },
   {
     routerLink: '../login',

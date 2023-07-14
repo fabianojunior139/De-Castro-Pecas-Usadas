@@ -10,12 +10,11 @@
     <ng-template #authenticatedUser>
       <div class="navbar">
         <div>
-          <a class="logo" href="#">De Castro Peças Usadas</a>
+          <a class="logo" href="/home">De Castro Peças Usadas</a>
         </div>
 
         <div>
-          <button mat-button>Anúncios</button>
-          <button mat-button>Dashboard</button>
+          <button mat-button (click)="redirect()">Dashboard</button>
           <button mat-button (click)="authService.logout()">Sair</button>
         </div>
       </div>
@@ -25,7 +24,7 @@
       <div class="navbar">
 
         <div>
-          <a class="logo" href="#">De Castro Peças Usadas</a>
+          <a class="logo" href="/home">De Castro Peças Usadas</a>
         </div>
 
         <div>
