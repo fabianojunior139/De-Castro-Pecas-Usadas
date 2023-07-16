@@ -26,7 +26,57 @@
     </div>
     <h2 class="announcements-title">Confira todos os anúncios disponíveis</h2>
     <section class="announcements">
-      <div class="left-container"></div>
+      <div class="left-container">
+        <h3>Filtros</h3>
+        <form>
+          <mat-form-field class="input-filter">
+            <mat-label>Carro</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field class="input-filter">
+            <mat-label>Marca</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field class="input-filter">
+            <mat-label>Modelo</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <mat-form-field class="input-filter">
+            <mat-label>Ano</mat-label>
+            <mat-select formControlName="filterYear">
+              <mat-option *ngFor="let year of years" value="{{year}}">{{year}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="input-filter">
+            <mat-label>Combustível</mat-label>
+            <mat-select>
+              <mat-option value="">Selecione</mat-option>
+              <mat-option value="GASOLINA">Gasolina</mat-option>
+              <mat-option value="ALCOOL">Álcool</mat-option>
+              <mat-option value="FLEX">Flex</mat-option>
+              <mat-option value="DIESEL">Diesel</mat-option>
+              <mat-option value="HIBRIDO">Híbrido</mat-option>
+              <mat-option value="ELETRICO">Elétrico</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field class="input-filter">
+            <mat-label>Câmbio</mat-label>
+            <mat-select>
+              <mat-option value="">Selecione</mat-option>
+              <mat-option value="GASOLINA">Manual</mat-option>
+              <mat-option value="ALCOOL">Automático</mat-option>
+              <mat-option value="FLEX">Semi-Automático</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <button mat-raised-button class="filter-button">Filtrar</button>
+        </form>
+      </div>
       <div class="right-container">
         <app-card-announcements></app-card-announcements>
         <app-card-announcements></app-card-announcements>

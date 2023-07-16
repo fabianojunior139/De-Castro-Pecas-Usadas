@@ -5,7 +5,7 @@ body {
 
 .main {
   width: 100vw;
-  height: 85vh;
+  height: 100vh;
   background-color: var(--color-gray);
 }
 
@@ -92,6 +92,31 @@ body {
   width: 30%;
   height: 100%;
   border: 1px solid var(--color-gray);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.left-container h3 {
+  font-family: var(--font-montserrat);
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.left-container form {
+  width: 100%;
+}
+
+.input-filter {
+  width: 100%;
+  font-family: var(--font-montserrat) !important  ;
+}
+
+.filter-button {
+  width: 100%;
+  background-color: var(--color-orange) !important;
+  color: var(--cor-branca) !important;
 }
 
 .right-container {

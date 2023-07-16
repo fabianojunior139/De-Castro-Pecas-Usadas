@@ -21,12 +21,40 @@
 }
 
 .car-image {
-  height: 100%; /* A imagem nunca será maior do que a altura do contêiner */
+  height: 100%;
   width: 100%;
 }
 
 .card-content {
   width: 50%;
   height: 100%;
-  padding: 0.5rem;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.car-name {
+  font-weight: 500;
+}
+
+.card-informations {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.75fr 0.66fr;
+  gap: 0.5rem;
+}
+
+.item {
+  font-size: 0.85rem;
+  color: var(--cor-cinza-clara);
+  margin-bottom: 0.25rem;
+}
+
+.icon {
+  margin-right: 0.25rem;
 }
