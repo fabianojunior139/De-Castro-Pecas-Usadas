@@ -3,7 +3,7 @@
  <p>Esta aplicação web tem como proposta criar um sistema de estoque, um controle de vendas e permitir a criação de anúncios dos produtos da empresa De Castro Peças Usadas</p>
 
 ## 🖥 Preview
-?
+https://www.youtube.com/watch?v=IFBjDes7YBs
 
 ## :heavy_check_mark: Principais funcionalidades
 - [x] Sistema de login
