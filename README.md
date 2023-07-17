@@ -1,6 +1,6 @@
  <h1 align="center">De Castro Peças Usadas 🔧</h1>
  <p>Este sistema foi feito para o trabalho final da 5° Academia Java oferecida pela Atos e UFN.</p>
- <p>Esta aplicação web tem como proposta criar um sistema de estoque, controle de vendas e criação de anúncios para a empresa De Castro Peças Usadas</p>
+ <p>Esta aplicação web tem como proposta criar um sistema de estoque, um controle de vendas e permitir a criação de anúncios dos produtos da empresa De Castro Peças Usadas</p>
 
 ## 🖥 Preview
 ?
