@@ -23,7 +23,8 @@ A API da De Castro Peças Usadas foi desenvolvida utilizando as seguintes tecnol
 
 Essa foi a estrutura do banco de dados utilizada no desenvolvimento dessa aplicação <br>
 
-![image](https://github.com/fabianojunior139/de-castro/assets/100708547/5285cb25-8c06-4a72-8d02-014e945f3e80)
+![image](https://github.com/fabianojunior139/De-Castro-Pecas-Usadas/assets/100708547/b1493c09-16a6-4b67-8c5c-1b892f413b56)
+
 
 ## Endpoints
 
