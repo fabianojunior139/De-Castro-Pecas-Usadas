@@ -10,7 +10,7 @@ A API da De Castro Peças Usadas foi desenvolvida utilizando as seguintes tecnol
 - Spring Boot 3.1
 - Spring Data JPA
 - Spring MVC
-- Spring DOC
+- Spring DOC (Swagger)
 - Spring Security
 - Padrão DTO
 
